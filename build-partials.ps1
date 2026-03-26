@@ -5,6 +5,7 @@ Set-Location $root
 
 $mainFile = Join-Path $root "sendlovetocuba.html"
 $secondaryFile = Join-Path $root "sendlovetocuba2.html"
+$aboutSourceFile = Join-Path $root "about.html"
 $partialsDir = Join-Path $root "partials"
 
 if (!(Test-Path $mainFile)) {
@@ -15,11 +16,14 @@ if (!(Test-Path $secondaryFile)) {
   throw "Secondary file not found: $secondaryFile"
 }
 
+if (!(Test-Path $aboutSourceFile)) {
+  throw "About source file not found: $aboutSourceFile"
+}
+
 $requiredPartials = @(
   "header.html",
   "hero.html",
   "shop-by-category.html",
-  "about.html",
   "featured-products.html",
   "why-choose-us.html",
   "how-it-works.html",
@@ -39,7 +43,6 @@ foreach ($partial in $requiredPartials) {
 $header = Get-Content (Join-Path $partialsDir "header.html")
 $hero = Get-Content (Join-Path $partialsDir "hero.html")
 $shop = Get-Content (Join-Path $partialsDir "shop-by-category.html")
-$about = Get-Content (Join-Path $partialsDir "about.html")
 $featured = Get-Content (Join-Path $partialsDir "featured-products.html")
 $why = Get-Content (Join-Path $partialsDir "why-choose-us.html")
 $how = Get-Content (Join-Path $partialsDir "how-it-works.html")
@@ -47,6 +50,24 @@ $collections = Get-Content (Join-Path $partialsDir "product-collections.html")
 $testimonials = Get-Content (Join-Path $partialsDir "testimonials.html")
 $service = Get-Content (Join-Path $partialsDir "service-features.html")
 $footer = Get-Content (Join-Path $partialsDir "footer.html")
+
+function Get-AboutSection {
+  param(
+    [string]$SourceFile
+  )
+
+  $lines = Get-Content $SourceFile
+  $startLine = (Select-String -Path $SourceFile -Pattern '<!-- ABOUT_SECTION_START -->' | Select-Object -First 1).LineNumber
+  $endLine = (Select-String -Path $SourceFile -Pattern '<!-- ABOUT_SECTION_END -->' | Select-Object -First 1).LineNumber
+
+  if (-not $startLine -or -not $endLine -or $endLine -le $startLine) {
+    throw "Could not find ABOUT_SECTION markers in $SourceFile"
+  }
+
+  return $lines[$startLine..($endLine - 2)]
+}
+
+$about = Get-AboutSection -SourceFile $aboutSourceFile
 
 function Build-Page {
   param(
