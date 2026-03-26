@@ -4,16 +4,11 @@ $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $root
 
 $mainFile = Join-Path $root "sendlovetocuba.html"
-$secondaryFile = Join-Path $root "sendlovetocuba2.html"
 $aboutSourceFile = Join-Path $root "about.html"
 $partialsDir = Join-Path $root "partials"
 
 if (!(Test-Path $mainFile)) {
   throw "Main file not found: $mainFile"
-}
-
-if (!(Test-Path $secondaryFile)) {
-  throw "Secondary file not found: $secondaryFile"
 }
 
 if (!(Test-Path $aboutSourceFile)) {
@@ -114,6 +109,5 @@ function Build-Page {
 }
 
 Build-Page -SourceFile $mainFile -OutputFile $mainFile
-Build-Page -SourceFile $secondaryFile -OutputFile $secondaryFile
 
-Write-Host "Built sendlovetocuba.html and sendlovetocuba2.html from partials."
+Write-Host "Built sendlovetocuba.html from partials."
