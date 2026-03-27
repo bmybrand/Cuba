@@ -1,0 +1,305 @@
+    <section class="bg-white pb-[72px] pt-[56px] md:pb-[96px] md:pt-[72px]">
+      <div class="mx-auto grid max-w-[1540px] gap-8 px-10 md:px-16 xl:grid-cols-[290px_minmax(0,1fr)] xl:px-24">
+        <aside class="space-y-6">
+          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+            <div class="flex overflow-hidden rounded-[14px] border border-[#dde3ec] bg-white">
+              <input type="search" placeholder="Search" class="w-full border-0 bg-transparent px-4 py-3 text-[15px] text-[#22314f] outline-none placeholder:text-[#8a94a8]" />
+              <button type="button" class="grid h-[52px] w-[52px] place-items-center bg-brand-red text-white">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <path d="m20 20-3.5-3.5"></path>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="food-categories-panel rounded-[26px] bg-[#f7f7f8] px-7 py-8">
+            <div class="flex items-center gap-3">
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-semibold uppercase leading-none text-[#091322]">Price</h3>
+            </div>
+
+            <div class="mt-8 space-y-5">
+              <div class="relative h-5">
+                <div class="pointer-events-none absolute top-1/2 h-1 w-full -translate-y-1/2 rounded-full bg-white"></div>
+                <div id="food-price-track" class="pointer-events-none absolute top-1/2 h-1 -translate-y-1/2 rounded-full bg-brand-red"></div>
+                <input
+                  id="food-price-min-range"
+                  class="price-slider absolute inset-0 block w-full cursor-pointer"
+                  type="range"
+                  min="0"
+                  max="660"
+                  step="10"
+                  value="0"
+                  aria-label="Minimum price"
+                />
+                <input
+                  id="food-price-max-range"
+                  class="price-slider absolute inset-0 block w-full cursor-pointer"
+                  type="range"
+                  min="0"
+                  max="660"
+                  step="10"
+                  value="660"
+                  aria-label="Maximum price"
+                />
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <input id="food-price-min-input" type="number" min="0" max="660" step="10" value="0" class="h-12 rounded-[14px] border border-[#d8dee8] bg-white px-4 text-[1rem] text-[#091322] outline-none" aria-label="Minimum price input" />
+                <input id="food-price-max-input" type="number" min="0" max="660" step="10" value="660" class="h-12 rounded-[14px] border border-[#d8dee8] bg-white px-4 text-[1rem] text-[#091322] outline-none" aria-label="Maximum price input" />
+              </div>
+            </div>
+
+            <div class="mt-8 flex items-center justify-between gap-4">
+              <p id="food-price-value" class="text-[1.2rem] text-[#6a7282]">0 - 660</p>
+              <button
+                id="food-price-filter"
+                type="button"
+                class="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#173a75] px-8 font-heading text-[1.1rem] uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:bg-brand-red"
+              >
+                Filter
+              </button>
+            </div>
+          </article>
+
+          <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
+            <div class="flex items-center gap-3">
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-semibold uppercase leading-none text-[#091322]">Categories</h3>
+            </div>
+
+            <div class="mt-8 space-y-6 text-[1.08rem] text-[#6f7788]">
+              <div>
+                <div class="flex items-center justify-between text-[#091322]">
+                  <button type="button" data-food-category="Food" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Food</button>
+                  <button type="button" id="food-category-toggle" class="grid h-7 w-7 place-items-center text-[1.3rem] leading-none text-[#091322] transition-colors duration-200 hover:text-brand-red" aria-expanded="true" aria-controls="food-subcategory-list">−</button>
+                  <span class="text-[1.3rem] leading-none">−</span>
+                </div>
+                <ul id="food-subcategory-list" class="mt-4 space-y-4 pl-5">
+                  <li>
+                    <button type="button" data-food-category="Coffee Time" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Coffee Time</button>
+                  </li>
+                  <li>
+                    <button type="button" data-food-category="Rice & Beans" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Rice &amp; Beans</button>
+                  </li>
+                  <li>
+                    <button type="button" data-food-category="SPAM ... SPAM ... SPAM" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">SPAM ... SPAM ... SPAM</button>
+                  </li>
+                  <li>
+                    <button type="button" data-food-category="Vienna Sausages" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Vienna Sausages</button>
+                  </li>
+                  <li>
+                    <button type="button" data-food-category="Tuna Fish" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Tuna Fish</button>
+                  </li>
+                  <li>
+                    <button type="button" data-food-category="Stock The Pantry" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Stock The Pantry</button>
+                  </li>
+                  <li>
+                    <button type="button" data-food-category="Italian Food" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Italian Food</button>
+                  </li>
+                  <li>
+                    <button type="button" data-food-category="Cookies" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Cookies</button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <button type="button" data-food-category="Solar Products" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Solar Products</button>
+                <span class="text-[1.3rem] leading-none">+</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <button type="button" data-food-category="Electric Scooters" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Electric Scooters</button>
+                <span class="text-[1.3rem] leading-none">+</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <button type="button" data-food-category="Electric Bikes" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Electric Bikes</button>
+                <span class="text-[1.3rem] leading-none">+</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <button type="button" data-food-category="Health & Wellness" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Health &amp; Wellness</button>
+                <span class="text-[1.3rem] leading-none">+</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <button type="button" data-food-category="Appliances" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Appliances</button>
+                <span class="text-[1.3rem] leading-none">+</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <button type="button" data-food-category="Furniture" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Furniture</button>
+                <span class="text-[1.3rem] leading-none">+</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+            <div class="flex items-center gap-3">
+              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
+              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Recent Products</h3>
+            </div>
+            <div class="mt-5 space-y-4">
+              <article class="flex items-center gap-3">
+                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
+                  <img src="assets/chips.jpeg" alt="Lunch pack snacks" class="max-h-[52px] w-auto object-contain" />
+                </div>
+                <div>
+                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Lunch Pack Snacks</h4>
+                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
+                </div>
+              </article>
+              <article class="flex items-center gap-3">
+                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
+                  <img src="assets/mariabiscits.jpeg" alt="Maria biscuits" class="max-h-[52px] w-auto object-contain" />
+                </div>
+                <div>
+                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Maria Biscuits</h4>
+                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
+                </div>
+              </article>
+              <article class="flex items-center gap-3">
+                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
+                  <img src="assets/food.svg" alt="Pantry bundle" class="max-h-[52px] w-auto object-contain" />
+                </div>
+                <div>
+                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Pantry Bundle</h4>
+                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+            <div class="flex items-center gap-3">
+              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
+              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Product Tags</h3>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Pantry</span>
+              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Snacks</span>
+              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Cookies</span>
+              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Coffee</span>
+              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Rice</span>
+            </div>
+          </article>
+
+          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+            <div class="flex items-center gap-3">
+              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
+              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Reviews</h3>
+            </div>
+            <div class="mt-5 space-y-2 text-[#f1b400]">
+              <div>★★★★★</div>
+              <div>★★★★☆</div>
+              <div>★★★☆☆</div>
+              <div>★★☆☆☆</div>
+              <div>★☆☆☆☆</div>
+            </div>
+          </article>
+        </aside>
+
+        <div>
+          <div class="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] px-5 py-4">
+            <p id="food-results-count" class="text-[14px] text-[#6d7890]">Showing 1-18 of 18 food results</p>
+            <div class="flex items-center gap-3">
+              <label class="text-[14px] text-[#6d7890]" for="food-sort">Sort by latest</label>
+              <select id="food-sort" class="rounded-[12px] border border-[#d7dde7] bg-white px-4 py-2 text-[14px] text-[#13213d] outline-none">
+                <option>Sort by latest</option>
+                <option>Price: low to high</option>
+                <option>Price: high to low</option>
+                <option>Most popular</option>
+              </select>
+              <button type="button" class="grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 7h16M4 12h16M4 17h16"></path>
+                </svg>
+              </button>
+              <button type="button" class="grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="4" y="4" width="6" height="6"></rect>
+                  <rect x="14" y="4" width="6" height="6"></rect>
+                  <rect x="4" y="14" width="6" height="6"></rect>
+                  <rect x="14" y="14" width="6" height="6"></rect>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="food-product-grid" class="grid items-start grid-cols-1 gap-x-5 gap-y-20 sm:grid-cols-2 xl:grid-cols-3">
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="48.30" data-category="Stock The Pantry">
+              <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button>
+              </div>
+              <div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center">
+                <img src="assets/chips.jpeg" alt="Assorted Lunch Pack Snacks" class="max-h-[146px] w-full object-contain" />
+              </div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.9/5)</span><span class="rating-count text-[#8a93a2]">58 reviews</span></div>
+                <p class="mt-2 text-[15px] text-[#294678]">Food</p>
+                <h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Assorted Lunch Pack Snacks</h4>
+                <p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$48.30</p>
+                <div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150">
+                  <button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button>
+                </div>
+              </div>
+            </article>
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="62.40" data-category="Cookies">
+              <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button>
+              </div>
+              <div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center"><img src="assets/mariabiscits.jpeg" alt="Maria Biscuits Family Pack" class="max-h-[146px] w-full object-contain" /></div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.9/5)</span><span class="rating-count text-[#8a93a2]">58 reviews</span></div>
+                <p class="mt-2 text-[15px] text-[#294678]">Food</p>
+                <h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Maria Biscuits Family Pack</h4>
+                <p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$48.30</p>
+                <div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150"><button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button></div>
+              </div>
+            </article>
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="89.50" data-category="Stock The Pantry">
+              <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button>
+              </div>
+              <div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center"><img src="assets/food.svg" alt="Pantry Staples Bundle" class="max-h-[146px] w-full object-contain" /></div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.9/5)</span><span class="rating-count text-[#8a93a2]">58 reviews</span></div>
+                <p class="mt-2 text-[15px] text-[#294678]">Food</p>
+                <h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Pantry Staples Bundle</h4>
+                <p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$48.30</p>
+                <div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150"><button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button></div>
+              </div>
+            </article>
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="128.00" data-category="Stock The Pantry">
+              <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button>
+              </div>
+              <div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center"><img src="assets/chips.jpeg" alt="Family Chips Bundle" class="max-h-[146px] w-full object-contain" /></div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.9/5)</span><span class="rating-count text-[#8a93a2]">58 reviews</span></div>
+                <p class="mt-2 text-[15px] text-[#294678]">Food</p>
+                <h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Family Chips Bundle</h4>
+                <p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$48.30</p>
+                <div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150"><button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button></div>
+              </div>
+            </article>
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="26.99"><div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100"><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button></div><div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center"><img src="assets/mariabiscits.jpeg" alt="Coffee Essentials Box" class="max-h-[146px] w-full object-contain" /></div><div class="mt-auto"><div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.8/5)</span><span class="rating-count text-[#8a93a2]">41 reviews</span></div><p class="mt-2 text-[15px] text-[#294678]">Food</p><h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Coffee Essentials Box</h4><p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$26.99</p><div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150"><button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button></div></div></article>
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="18.75"><div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100"><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button></div><div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center"><img src="assets/chips.jpeg" alt="Cracker Family Pack" class="max-h-[146px] w-full object-contain" /></div><div class="mt-auto"><div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.7/5)</span><span class="rating-count text-[#8a93a2]">33 reviews</span></div><p class="mt-2 text-[15px] text-[#294678]">Food</p><h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Cracker Family Pack</h4><p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$18.75</p><div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150"><button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button></div></div></article>
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="42.60"><div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100"><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button></div><div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center"><img src="assets/food.svg" alt="Rice and Beans Bundle" class="max-h-[146px] w-full object-contain" /></div><div class="mt-auto"><div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.9/5)</span><span class="rating-count text-[#8a93a2]">52 reviews</span></div><p class="mt-2 text-[15px] text-[#294678]">Food</p><h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Rice &amp; Beans Bundle</h4><p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$42.60</p><div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150"><button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button></div></div></article>
+            <article class="food-product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-price="57.20"><div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100"><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 20-1.4-1.3C5.4 14 2 10.9 2 7.1A4.1 4.1 0 0 1 6.2 3 4.7 4.7 0 0 1 12 6.1 4.7 4.7 0 0 1 17.8 3 4.1 4.1 0 0 1 22 7.1c0 3.8-3.4 6.9-8.6 11.6L12 20Z"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="10" height="10" rx="2"></rect><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path></svg></button></div><div class="relative mt-3 mb-4 flex h-[112px] items-center justify-center"><img src="assets/food.svg" alt="Canned Goods Combo" class="max-h-[146px] w-full object-contain" /></div><div class="mt-auto"><div class="flex items-center gap-1.5 text-[11px] text-[#8a93a2]"><span class="text-[#f3b000]">&#9733;</span><span class="rating-score">(4.8/5)</span><span class="rating-count text-[#8a93a2]">28 reviews</span></div><p class="mt-2 text-[15px] text-[#294678]">Food</p><h4 class="mt-1 font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Canned Goods Combo</h4><p class="mt-2 font-heading text-[1.9rem] leading-none text-brand-red">$57.20</p><div class="pointer-events-none absolute inset-x-5 top-full z-20 mt-0 -translate-y-3 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-150"><button type="button" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[9px] bg-[#173a75] px-4 font-heading text-[1rem] uppercase text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H7"></path></svg><span>Add To Cart</span></button></div></div></article>
+          </div>
+
+          <p id="food-empty-state" class="mt-12 hidden text-center font-heading text-[1.35rem] uppercase text-[#173a75]">No Products</p>
+
+          <div id="food-pagination" class="mt-20 flex items-center justify-center gap-3">
+            <button type="button" data-food-page="1" class="grid h-10 w-10 place-items-center rounded-full bg-brand-red text-white">1</button>
+            <button type="button" data-food-page="2" class="grid h-10 w-10 place-items-center rounded-full border border-[#d7dde7] bg-white text-[#173a75]">2</button>
+          </div>
+        </div>
+      </div>
+    </section>

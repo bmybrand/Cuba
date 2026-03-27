@@ -1,0 +1,189 @@
+    <section class="bg-white py-[72px] md:py-[96px]">
+      <div class="mx-auto grid items-start max-w-[1540px] gap-8 px-10 md:px-16 xl:grid-cols-[minmax(0,1fr)_360px] xl:px-24">
+        <article class="rounded-[20px] border border-[#e6ebf2] bg-white p-5 shadow-[0_10px_28px_rgba(8,22,46,0.05)] md:p-6">
+          <div class="flex flex-col items-start gap-4">
+            <p class="text-[15px] text-[#7a859a]">Returning Customer? Click here to login</p>
+            <div class="grid w-full max-w-[370px] grid-cols-2 rounded-[17px] border border-[#cfd6e2] p-[5px]">
+              <button id="checkout-sender-tab" type="button" class="inline-flex h-[58px] items-center justify-center rounded-[13px] bg-[#173a75] px-4 font-heading font-semibold text-[1.16rem] uppercase leading-none text-white">Sender Details</button>
+              <button id="checkout-recipient-tab" type="button" class="inline-flex h-[58px] items-center justify-center rounded-[13px] bg-transparent px-4 font-heading font-semibold text-[1.16rem] uppercase leading-none text-[#101827]">Recipient Details</button>
+            </div>
+          </div>
+
+          <form id="checkout-sender-form" class="mt-6 space-y-3.5" action="#" method="post" onsubmit="return false;">
+            <input type="text" placeholder="Full Name" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            <input type="text" placeholder="Address" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            <input type="text" placeholder="Apartment, unit, etc. (optional)" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            <input type="text" placeholder="City" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+
+            <div class="grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
+              <select class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#7a859a] outline-none">
+                <option>State</option>
+                <option>Florida</option>
+                <option>Texas</option>
+                <option>California</option>
+              </select>
+              <input type="text" placeholder="Zip code" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <input type="email" placeholder="Email address" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+              <input type="tel" placeholder="Phone" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            </div>
+
+            <textarea rows="5" placeholder="Type your note (optional)" class="checkout-field min-h-[112px] w-full rounded-[11px] border border-[#e1e6ef] px-5 py-4 text-[15px] text-[#13213d] outline-none"></textarea>
+
+            <p class="pt-1 text-[18px] leading-[1.5] text-[#8c96a8]">
+              Please provide accurate sender information. This is required for order approval and shipping compliance with U.S. and Cuban regulations.
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-1">
+              <button type="button" class="group inline-flex items-center justify-between rounded-[10px] border border-transparent bg-brand-red px-1.5 py-1.5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-transparent hover:text-brand-red">
+                <span class="font-heading text-[1rem] uppercase leading-none tracking-[0.02em] lg:pl-2">Continue Shipping</span>
+                <span class="ml-4 grid h-10 w-10 place-items-center rounded-[10px] border border-transparent bg-white text-brand-red transition-all duration-300 group-hover:scale-105 group-hover:border-brand-red group-hover:bg-transparent group-hover:text-brand-red">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <path d="M6 12.5 10.2 16.7 18 8.8"></path>
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="group inline-flex items-center justify-between rounded-[10px] border border-transparent bg-[#173a75] px-1.5 py-1.5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-transparent hover:text-[#173a75]">
+                <span class="font-heading text-[1rem] uppercase leading-none tracking-[0.02em] lg:pl-2">Return to Cart</span>
+                <span class="ml-4 grid h-10 w-10 place-items-center rounded-[10px] border border-transparent bg-white text-[#173a75] transition-all duration-300 group-hover:scale-105 group-hover:border-[#173a75] group-hover:bg-transparent group-hover:text-[#173a75]">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <path d="M6 12.5 10.2 16.7 18 8.8"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
+
+          <form id="checkout-recipient-form" class="mt-6 hidden space-y-3.5" action="#" method="post" onsubmit="return false;">
+            <div class="grid gap-4 md:grid-cols-2">
+              <input type="text" placeholder="First name" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+              <input type="text" placeholder="Last name" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            </div>
+            <input type="text" placeholder="Cuba Identity Card Number" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            <input type="text" placeholder="Address" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            <input type="text" placeholder="Apartment, unit, etc. (optional)" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            <input type="text" placeholder="City" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <select class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#7a859a] outline-none">
+                <option>Municipality</option>
+                <option>Havana</option>
+                <option>Santiago de Cuba</option>
+                <option>Matanzas</option>
+              </select>
+              <select class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#7a859a] outline-none">
+                <option>Province</option>
+                <option>La Habana</option>
+                <option>Holguin</option>
+                <option>Villa Clara</option>
+              </select>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <input type="text" placeholder="Postal Code" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+              <input type="tel" placeholder="Phone" class="checkout-field h-[48px] w-full rounded-[11px] border border-[#e1e6ef] px-5 text-[15px] text-[#13213d] outline-none" />
+            </div>
+
+            <textarea rows="5" placeholder="Type your note (optional)" class="checkout-field min-h-[112px] w-full rounded-[11px] border border-[#e1e6ef] px-5 py-4 text-[15px] text-[#13213d] outline-none"></textarea>
+
+            <p class="pt-1 text-[15px] leading-[1.5] text-[#8c96a8]">
+              Enter accurate recipient details in Cuba. This information is required for customs clearance and successful delivery.
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-1">
+              <button type="button" class="group inline-flex items-center justify-between rounded-[10px] border border-transparent bg-brand-red px-1.5 py-1.5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-transparent hover:text-brand-red">
+                <span class="font-heading text-[1rem] uppercase leading-none tracking-[0.02em] lg:pl-2">Continue Shipping</span>
+                <span class="ml-4 grid h-10 w-10 place-items-center rounded-[10px] border border-transparent bg-white text-brand-red transition-all duration-300 group-hover:scale-105 group-hover:border-brand-red group-hover:bg-transparent group-hover:text-brand-red">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <path d="M6 12.5 10.2 16.7 18 8.8"></path>
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="group inline-flex items-center justify-between rounded-[10px] border border-transparent bg-[#173a75] px-1.5 py-1.5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-transparent hover:text-[#173a75]">
+                <span class="font-heading text-[1rem] uppercase leading-none tracking-[0.02em] lg:pl-2">Return to Cart</span>
+                <span class="ml-4 grid h-10 w-10 place-items-center rounded-[10px] border border-transparent bg-white text-[#173a75] transition-all duration-300 group-hover:scale-105 group-hover:border-[#173a75] group-hover:bg-transparent group-hover:text-[#173a75]">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <path d="M6 12.5 10.2 16.7 18 8.8"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
+        </article>
+
+        <aside class="rounded-[18px] bg-[#F7F7F7] p-5 shadow-[0_10px_28px_rgba(8,22,46,0.05)]">
+          <section>
+            <h3 class="font-heading font-semibold text-[1.32rem] uppercase leading-none text-[#101827]">Order Summary</h3>
+            <div class="mt-4 h-px bg-[#d9dee8]"></div>
+            <div class="mt-4 space-y-0 text-[13px] text-[#7c879a]">
+              <div class="flex items-center justify-between gap-4 border-b border-[#e3e7ee] py-3"><span>Lorem ipsum dolor sit amet</span><span class="text-[#5f697d]">$86.00</span></div>
+              <div class="flex items-center justify-between gap-4 border-b border-[#e3e7ee] py-3"><span>Lorem ipsum dolor sit amet</span><span class="text-[#5f697d]">$48.00</span></div>
+              <div class="flex items-center justify-between gap-4 border-b border-[#e3e7ee] py-3"><span>Lorem ipsum dolor sit amet</span><span class="text-[#5f697d]">$42.00</span></div>
+              <div class="flex items-center justify-between gap-4 border-b border-[#e3e7ee] py-3"><span>Lorem ipsum dolor sit amet</span><span class="text-[#5f697d]">$55.00</span></div>
+              <div class="flex items-center justify-between gap-4 border-b border-[#e3e7ee] py-3"><span>Lorem ipsum dolor sit amet</span><span class="text-[#5f697d]">$55.00</span></div>
+            </div>
+            <div class="mt-3 space-y-0 text-[13px]">
+              <div class="flex items-center justify-between gap-4 border-b border-[#e3e7ee] py-3 text-[#7c879a]"><span>Sub total</span><span class="text-[#5f697d]">$249.00 USD</span></div>
+              <div class="flex items-center justify-between gap-4 py-3 text-[#7c879a]"><span>Total</span><span class="text-[#5f697d]">$249.00 USD</span></div>
+            </div>
+          </section>
+
+          <section class="mt-6">
+            <h3 class="font-heading font-semibold text-[1.32rem] uppercase leading-none text-[#101827]">Payment Method</h3>
+            <div class="mt-4 space-y-2 text-[1rem] text-[#173a75]">
+              <label class="flex items-center gap-2.5 font-heading uppercase"><input type="radio" name="payment" class="h-3.5 w-3.5 accent-[#173a75]" /> Direct Bank Transfer</label>
+              <label class="flex items-center gap-2.5 font-heading uppercase"><input type="radio" name="payment" class="h-3.5 w-3.5 accent-[#173a75]" /> Cash on Delivery (COD)</label>
+              <label class="flex items-center gap-2.5 font-heading uppercase"><input type="radio" name="payment" checked class="h-3.5 w-3.5 accent-[#173a75]" /> Credit / Debit Card</label>
+            </div>
+            <div class="mt-3 flex flex-wrap items-center gap-1.5">
+              <img src="assets/visa.png.svg" alt="Visa" class="h-6 w-auto rounded-[3px] bg-white p-[2px]" />
+              <img src="assets/mastercard.png.svg" alt="Mastercard" class="h-6 w-auto rounded-[3px] bg-white p-[2px]" />
+              <img src="assets/paypal.png.svg" alt="PayPal" class="h-6 w-auto rounded-[3px] bg-white p-[2px]" />
+            </div>
+          </section>
+
+          <section class="mt-5 space-y-3">
+            <div>
+              <label class="mb-1.5 block font-heading font-semibold text-[0.92rem] uppercase text-[#101827]">Full Name</label>
+              <input type="text" placeholder="Sara Tylor" class="checkout-field h-[42px] w-full rounded-[10px] border border-[#dfe4ec] px-4 text-[13px] text-[#13213d] outline-none" />
+            </div>
+            <div>
+              <label class="mb-1.5 block font-heading font-semibold text-[0.92rem] uppercase text-[#101827]">Card Number</label>
+              <div class="relative">
+                <input type="text" placeholder="1234 5678 9012 3456" class="checkout-field h-[42px] w-full rounded-[10px] border border-[#dfe4ec] px-4 pr-12 text-[13px] text-[#13213d] outline-none" />
+                <span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-heading text-[0.8rem] uppercase text-[#173a75]">Visa</span>
+              </div>
+            </div>
+            <div class="grid gap-3 grid-cols-2">
+              <div>
+                <label class="mb-1.5 block font-heading font-semibold text-[0.92rem] uppercase text-[#101827]">Expiration Date</label>
+                <input type="text" placeholder="08/10" class="checkout-field h-[42px] w-full rounded-[10px] border border-[#dfe4ec] px-4 text-[13px] text-[#13213d] outline-none" />
+              </div>
+              <div>
+                <label class="mb-1.5 block font-heading font-semibold text-[0.92rem] uppercase text-[#101827]">CVV</label>
+                <input type="text" placeholder="896" class="checkout-field h-[42px] w-full rounded-[10px] border border-[#dfe4ec] px-4 text-[13px] text-[#13213d] outline-none" />
+              </div>
+            </div>
+
+            <button type="button" class="inline-flex h-[44px] w-full items-center justify-center rounded-[8px] bg-brand-red font-heading text-[1rem] uppercase text-white">Pay Now</button>
+            <p class="text-[13px] leading-[1.65] text-[#8c96a8]">
+              Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
+            </p>
+            <label class="flex items-start gap-2.5 text-[13px] leading-[1.55] text-[#7c879a]">
+              <input type="checkbox" checked class="mt-0.5 h-3.5 w-3.5 accent-[#173a75]" />
+              <span>I have read and agree to the website <span class="text-brand-red">terms and conditions</span></span>
+            </label>
+            <button type="button" class="group inline-flex items-center justify-between rounded-[10px] border border-transparent bg-brand-red px-1.5 py-1.5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-transparent hover:text-brand-red">
+              <span class="font-heading text-[1rem] uppercase leading-none tracking-[0.02em] lg:pl-2">Place Your Order</span>
+              <span class="ml-4 grid h-10 w-10 place-items-center rounded-[10px] border border-transparent bg-white text-brand-red transition-all duration-300 group-hover:scale-105 group-hover:border-brand-red group-hover:bg-transparent group-hover:text-brand-red">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M6 12.5 10.2 16.7 18 8.8"></path>
+                </svg>
+              </span>
+            </button>
+          </section>
+        </aside>
+      </div>
+    </section>
