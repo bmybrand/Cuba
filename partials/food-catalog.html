@@ -1,5 +1,5 @@
     <section class="bg-white pb-[72px] pt-[56px] md:pb-[96px] md:pt-[72px]">
-      <div class="mx-auto grid max-w-[1540px] gap-8 px-10 md:px-16 xl:grid-cols-[290px_minmax(0,1fr)] xl:px-24">
+      <div class="mx-auto grid max-w-[1540px] gap-8 px-10 md:px-16 xl:grid-cols-[340px_minmax(0,1fr)] xl:px-24">
         <aside class="space-y-6">
           <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
             <div class="flex overflow-hidden rounded-[14px] border border-[#dde3ec] bg-white">
@@ -16,7 +16,7 @@
           <article class="food-categories-panel rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
               <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
-              <h3 class="font-heading text-[1.7rem] font-semibold uppercase leading-none text-[#091322]">Price</h3>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Price</h3>
             </div>
 
             <div class="mt-8 space-y-5">
@@ -66,15 +66,14 @@
           <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
               <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
-              <h3 class="font-heading text-[1.7rem] font-semibold uppercase leading-none text-[#091322]">Categories</h3>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Categories</h3>
             </div>
 
             <div class="mt-8 space-y-6 text-[1.08rem] text-[#6f7788]">
               <div>
-                <div class="flex items-center justify-between text-[#091322]">
+                <div class="flex items-center justify-between">
                   <button type="button" data-food-category="Food" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Food</button>
-                  <button type="button" id="food-category-toggle" class="grid h-7 w-7 place-items-center text-[1.3rem] leading-none text-[#091322] transition-colors duration-200 hover:text-brand-red" aria-expanded="true" aria-controls="food-subcategory-list">−</button>
-                  <span class="text-[1.3rem] leading-none">−</span>
+                  <span id="food-category-toggle" class="text-[1.3rem] leading-none" role="button" tabindex="0" aria-expanded="true" aria-controls="food-subcategory-list" style="cursor: pointer;">-</span>
                 </div>
                 <ul id="food-subcategory-list" class="mt-4 space-y-4 pl-5">
                   <li>
@@ -131,67 +130,126 @@
             </div>
           </article>
 
-          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+          <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
-              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
-              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Recent Products</h3>
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Recent Products</h3>
             </div>
-            <div class="mt-5 space-y-4">
-              <article class="flex items-center gap-3">
-                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
-                  <img src="assets/chips.jpeg" alt="Lunch pack snacks" class="max-h-[52px] w-auto object-contain" />
+            <div class="mt-7 space-y-5">
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/barsoap.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
                 </div>
-                <div>
-                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Lunch Pack Snacks</h4>
-                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
-                </div>
-              </article>
-              <article class="flex items-center gap-3">
-                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
-                  <img src="assets/mariabiscits.jpeg" alt="Maria biscuits" class="max-h-[52px] w-auto object-contain" />
-                </div>
-                <div>
-                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Maria Biscuits</h4>
-                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
                 </div>
               </article>
-              <article class="flex items-center gap-3">
-                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
-                  <img src="assets/food.svg" alt="Pantry bundle" class="max-h-[52px] w-auto object-contain" />
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/electricbike.svg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
                 </div>
-                <div>
-                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Pantry Bundle</h4>
-                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
+                </div>
+              </article>
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/mariabiscits.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
+                </div>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
+                </div>
+              </article>
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/electricgenrater.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
+                </div>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
+                </div>
+              </article>
+              <article class="flex items-start gap-5">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/flashlight.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
+                </div>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
                 </div>
               </article>
             </div>
           </article>
 
-          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+          <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
-              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
-              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Product Tags</h3>
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Product Tags</h3>
             </div>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Pantry</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Snacks</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Cookies</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Coffee</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Rice</span>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Appliances</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Food Packs</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Personal Care</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Generators</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Personal Care</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Solar Kits</span>
             </div>
           </article>
 
-          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+          <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
-              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
-              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Reviews</h3>
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Reviews</h3>
             </div>
-            <div class="mt-5 space-y-2 text-[#f1b400]">
-              <div>★★★★★</div>
-              <div>★★★★☆</div>
-              <div>★★★☆☆</div>
-              <div>★★☆☆☆</div>
-              <div>★☆☆☆☆</div>
+            <div class="mt-6 space-y-4">
+              <button type="button" data-review-stars="5" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="4" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="3" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="2" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="1" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
             </div>
           </article>
         </aside>
@@ -207,12 +265,12 @@
                 <option>Price: high to low</option>
                 <option>Most popular</option>
               </select>
-              <button type="button" class="grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]">
+              <button id="food-list-view-button" type="button" class="food-view-button grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]" aria-label="List view">
                 <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path d="M4 7h16M4 12h16M4 17h16"></path>
                 </svg>
               </button>
-              <button type="button" class="grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]">
+              <button id="food-grid-view-button" type="button" class="food-view-button is-active grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]" aria-label="Grid view">
                 <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
                   <rect x="4" y="4" width="6" height="6"></rect>
                   <rect x="14" y="4" width="6" height="6"></rect>
@@ -303,3 +361,4 @@
         </div>
       </div>
     </section>
+

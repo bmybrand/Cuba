@@ -6,7 +6,7 @@
   <title>Food - Send Love to Cuba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -23,7 +23,7 @@
           },
           fontFamily: {
             body: ["Barlow", "sans-serif"],
-            heading: ["Oswald", "sans-serif"],
+            heading: ["Bebas Neue", "sans-serif"],
           },
           boxShadow: {
             soft: "0 12px 30px rgba(5, 21, 45, 0.08)",
@@ -38,7 +38,13 @@
   </script>
   <style>
     body {
-      font-size: 1.12rem;
+      font-size: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        font-size: 1.12rem;
+      }
     }
 
     .hide-scrollbar {
@@ -50,6 +56,9 @@
       display: none;
     }
 
+    .text-xs,
+    .text-sm,
+    .text-base,
     .text-\[10px\],
     .text-\[11px\],
     .text-\[12px\],
@@ -60,7 +69,8 @@
     .text-\[17px\],
     .text-\[0\.95rem\],
     .text-\[1rem\],
-    .text-\[1\.05rem\] {
+    .text-\[1\.05rem\],
+    .text-\[1\.08rem\] {
       font-size: 1.12rem !important;
     }
 
@@ -318,13 +328,13 @@
 
         <nav class="hidden items-center gap-8 xl:absolute xl:left-1/2 xl:top-0 xl:z-[1] xl:flex xl:h-full xl:-translate-x-1/2 xl:border-x xl:border-brand-line xl:px-10 xl:gap-10 xl:px-12" aria-label="Main navigation">
           <!-- Temporary hrefs added for convenience while pages are being built. -->
-          <a href="sendlovetocuba.html" class="font-heading text-[17px] uppercase tracking-[0.2px] text-brand-red underline underline-offset-[5px]">Home</a>
-          <a href="shopproducts.html" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Shop</a>
-          <a href="about.html" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
-          <a href="sendlovetocuba.html#how-it-works" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
-          <a href="sendlovetocuba.html#product-collections" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
+          <a href="sendlovetocuba.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-brand-red underline underline-offset-[5px]">Home</a>
+          <a href="shopproducts.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Shop</a>
+          <a href="about.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
+          <a href="howitworks.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
+          <a href="sendlovetocuba.html#product-collections" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
+          <a href="sendlovetocuba.html#why-choose-us" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
+          <a href="sendlovetocuba.html#service-features" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
         </nav>
       </div>
 
@@ -335,13 +345,13 @@
           </button>
           <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
-            <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[11px] font-semibold text-white">0</span>
+            <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[11px] font-medium text-white">0</span>
           </button>
           <button class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-[#091322] text-white">
               <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M3 4h2l2.4 10.5H19L21 8H8"></path></svg>
             </span>
-            <span class="font-body text-[17px] font-semibold text-[#111827]">$0.00</span>
+            <span class="font-body text-[17px] font-medium text-[#111827]">$0.00</span>
           </button>
         </div>
 
@@ -356,7 +366,7 @@
         </button>
         <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
-          <span class="absolute right-0 top-0 grid h-5 min-w-[20px] place-items-center rounded-full bg-brand-red px-1 text-[11px] font-semibold text-white">0</span>
+          <span class="absolute right-0 top-0 grid h-5 min-w-[20px] place-items-center rounded-full bg-brand-red px-1 text-[11px] font-medium text-white">0</span>
         </button>
         <button id="menu-button-mobile" class="grid h-12 w-12 place-items-center rounded-none bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
           <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -377,13 +387,13 @@
 
         <nav class="mt-8 flex flex-col xl:hidden" aria-label="Sidebar navigation">
           <!-- Temporary hrefs added for convenience while pages are being built. -->
-          <a href="sendlovetocuba.html" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-brand-red">Home</a>
-          <a href="shopproducts.html" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">Shop</a>
-          <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
-          <a href="sendlovetocuba.html#how-it-works" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
-          <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
+          <a href="sendlovetocuba.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-brand-red">Home</a>
+          <a href="shopproducts.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Shop</a>
+          <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
+          <a href="howitworks.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
+          <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
+          <a href="sendlovetocuba.html#why-choose-us" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
+          <a href="sendlovetocuba.html#service-features" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
         </nav>
 
         <div class="mt-8">
@@ -431,6 +441,7 @@
     </div>
   </header>
 
+
   <main>
     <section class="relative overflow-hidden py-[94px] md:py-[118px]">
       <img src="assets/shipbg.svg" alt="Food delivery background" class="absolute inset-0 h-full w-full object-cover" />
@@ -441,7 +452,7 @@
       </div>
     </section>
     <section class="bg-white pb-[72px] pt-[56px] md:pb-[96px] md:pt-[72px]">
-      <div class="mx-auto grid max-w-[1540px] gap-8 px-10 md:px-16 xl:grid-cols-[290px_minmax(0,1fr)] xl:px-24">
+      <div class="mx-auto grid max-w-[1540px] gap-8 px-10 md:px-16 xl:grid-cols-[340px_minmax(0,1fr)] xl:px-24">
         <aside class="space-y-6">
           <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
             <div class="flex overflow-hidden rounded-[14px] border border-[#dde3ec] bg-white">
@@ -458,7 +469,7 @@
           <article class="food-categories-panel rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
               <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
-              <h3 class="font-heading text-[1.7rem] font-semibold uppercase leading-none text-[#091322]">Price</h3>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Price</h3>
             </div>
 
             <div class="mt-8 space-y-5">
@@ -508,15 +519,14 @@
           <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
               <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
-              <h3 class="font-heading text-[1.7rem] font-semibold uppercase leading-none text-[#091322]">Categories</h3>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Categories</h3>
             </div>
 
             <div class="mt-8 space-y-6 text-[1.08rem] text-[#6f7788]">
               <div>
-                <div class="flex items-center justify-between text-[#091322]">
+                <div class="flex items-center justify-between">
                   <button type="button" data-food-category="Food" class="food-category-button text-left transition-colors duration-200 hover:text-brand-red">Food</button>
-                  <button type="button" id="food-category-toggle" class="grid h-7 w-7 place-items-center text-[1.3rem] leading-none text-[#091322] transition-colors duration-200 hover:text-brand-red" aria-expanded="true" aria-controls="food-subcategory-list">−</button>
-                  <span class="text-[1.3rem] leading-none">−</span>
+                  <span id="food-category-toggle" class="text-[1.3rem] leading-none" role="button" tabindex="0" aria-expanded="true" aria-controls="food-subcategory-list" style="cursor: pointer;">-</span>
                 </div>
                 <ul id="food-subcategory-list" class="mt-4 space-y-4 pl-5">
                   <li>
@@ -573,67 +583,126 @@
             </div>
           </article>
 
-          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+          <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
-              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
-              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Recent Products</h3>
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Recent Products</h3>
             </div>
-            <div class="mt-5 space-y-4">
-              <article class="flex items-center gap-3">
-                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
-                  <img src="assets/chips.jpeg" alt="Lunch pack snacks" class="max-h-[52px] w-auto object-contain" />
+            <div class="mt-7 space-y-5">
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/barsoap.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
                 </div>
-                <div>
-                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Lunch Pack Snacks</h4>
-                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
-                </div>
-              </article>
-              <article class="flex items-center gap-3">
-                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
-                  <img src="assets/mariabiscits.jpeg" alt="Maria biscuits" class="max-h-[52px] w-auto object-contain" />
-                </div>
-                <div>
-                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Maria Biscuits</h4>
-                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
                 </div>
               </article>
-              <article class="flex items-center gap-3">
-                <div class="flex h-[66px] w-[66px] items-center justify-center rounded-[16px] bg-white">
-                  <img src="assets/food.svg" alt="Pantry bundle" class="max-h-[52px] w-auto object-contain" />
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/electricbike.svg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
                 </div>
-                <div>
-                  <h4 class="font-heading text-[1rem] uppercase leading-none text-[#13213d]">Pantry Bundle</h4>
-                  <p class="mt-2 text-[14px] font-semibold text-brand-red">$48.30</p>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
+                </div>
+              </article>
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/mariabiscits.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
+                </div>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
+                </div>
+              </article>
+              <article class="flex items-start gap-5 border-b border-[#d9dde4] pb-6">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/electricgenrater.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
+                </div>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
+                </div>
+              </article>
+              <article class="flex items-start gap-5">
+                <div class="flex h-[90px] w-[90px] shrink-0 items-center justify-center">
+                  <img src="assets/flashlight.jpeg" alt="Recent product" class="max-h-[82px] w-auto object-contain" />
+                </div>
+                <div class="min-w-0 pt-1">
+                  <h4 class="font-heading text-[1.28rem] uppercase leading-[0.92] text-[#091322]">Lorem Ipsum<br />Dolor Sit Amet</h4>
+                  <p class="mt-2 text-[1.38rem] font-medium leading-none text-brand-red">$466.30</p>
+                  <div class="mt-2 flex items-center gap-0.5 text-[16px] leading-none">
+                    <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                  </div>
                 </div>
               </article>
             </div>
           </article>
 
-          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+          <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
-              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
-              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Product Tags</h3>
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Product Tags</h3>
             </div>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Pantry</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Snacks</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Cookies</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Coffee</span>
-              <span class="rounded-full border border-[#d9e0ea] bg-white px-3 py-2 text-[13px] text-[#5d6880]">Rice</span>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Appliances</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Food Packs</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Personal Care</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Generators</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Personal Care</span>
+              <span class="rounded-full bg-white px-3 py-1.5 text-[10px] text-[#173a75]">Solar Kits</span>
             </div>
           </article>
 
-          <article class="rounded-[22px] border border-[#e8edf4] bg-[#f9fafc] p-5">
+          <article class="rounded-[26px] bg-[#f7f7f8] px-7 py-8">
             <div class="flex items-center gap-3">
-              <span class="h-5 w-[3px] rounded-full bg-brand-red"></span>
-              <h3 class="font-heading text-[1.24rem] uppercase leading-none text-[#13213d]">Reviews</h3>
+              <span class="inline-block h-0 w-0 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-brand-red border-t-transparent"></span>
+              <h3 class="font-heading text-[1.7rem] font-medium uppercase leading-none text-[#091322]">Reviews</h3>
             </div>
-            <div class="mt-5 space-y-2 text-[#f1b400]">
-              <div>★★★★★</div>
-              <div>★★★★☆</div>
-              <div>★★★☆☆</div>
-              <div>★★☆☆☆</div>
-              <div>★☆☆☆☆</div>
+            <div class="mt-6 space-y-4">
+              <button type="button" data-review-stars="5" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="4" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="3" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="2" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
+              <button type="button" data-review-stars="1" class="food-review-button flex items-center gap-4">
+                <span class="h-4 w-4 rounded-full border border-[#cfd5df] bg-transparent"></span>
+                <span class="flex items-center gap-0.5 text-[18px] leading-none">
+                  <span class="text-[#f1b400]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span><span class="text-[#d1d5dd]">&#9733;</span>
+                </span>
+              </button>
             </div>
           </article>
         </aside>
@@ -649,12 +718,12 @@
                 <option>Price: high to low</option>
                 <option>Most popular</option>
               </select>
-              <button type="button" class="grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]">
+              <button id="food-list-view-button" type="button" class="food-view-button grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]" aria-label="List view">
                 <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path d="M4 7h16M4 12h16M4 17h16"></path>
                 </svg>
               </button>
-              <button type="button" class="grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]">
+              <button id="food-grid-view-button" type="button" class="food-view-button is-active grid h-10 w-10 place-items-center rounded-[12px] border border-[#d7dde7] bg-white text-[#13213d]" aria-label="Grid view">
                 <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
                   <rect x="4" y="4" width="6" height="6"></rect>
                   <rect x="14" y="4" width="6" height="6"></rect>
@@ -745,6 +814,7 @@
         </div>
       </div>
     </section>
+
     <section id="service-features" class="border-y border-[#e0e4ea] bg-[#f3f4f6] py-8 md:py-10">
       <div class="mx-auto max-w-[1540px] px-10 md:px-16 xl:px-24">
         <div class="grid grid-cols-1 gap-4 pl-4 pr-2 md:grid-cols-2 md:pl-5 md:pr-3 xl:grid-cols-4">
@@ -752,7 +822,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Delivery%20Across%20Cuba.svg" alt="Delivery Across Cuba" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Reliable home delivery to loved ones across the island.</p>
             </div>
           </div>
@@ -762,7 +832,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Easy%20Online%20Ordering.svg" alt="Easy Online Ordering" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Shop from the U.S. with a simple &amp; convenient process.</p>
             </div>
           </div>
@@ -772,7 +842,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Secure%20Payment.svg" alt="Secure Payment" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Trusted checkout options for a safe shopping experience.</p>
             </div>
           </div>
@@ -782,7 +852,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Essential%20Product%20Selection.svg" alt="Essential Product Selection" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Send groceries, household goods, appliances, &amp; more.</p>
             </div>
           </div>
@@ -1291,7 +1361,7 @@
       Array.from(document.querySelectorAll("[data-food-category]")).forEach((button) => {
         const isActive = button.dataset.foodCategory === activeFoodCategory;
         button.classList.toggle("text-brand-red", isActive);
-        button.classList.toggle("font-semibold", isActive);
+        button.classList.toggle("font-medium", isActive);
         button.classList.toggle("text-[#091322]", isActive && button.dataset.foodCategory === "Food");
       });
 
@@ -1575,5 +1645,6 @@
   </script>
 </body>
 </html>
+
 
 

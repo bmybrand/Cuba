@@ -6,7 +6,7 @@
   <title>Send Love to Cuba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -23,7 +23,7 @@
           },
           fontFamily: {
             body: ["Barlow", "sans-serif"],
-            heading: ["Oswald", "sans-serif"],
+            heading: ["Bebas Neue", "sans-serif"],
           },
           boxShadow: {
             soft: "0 12px 30px rgba(5, 21, 45, 0.08)",
@@ -43,7 +43,13 @@
     }
 
     body {
-      font-size: 1.12rem;
+      font-size: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        font-size: 1.12rem;
+      }
     }
 
     .hide-scrollbar {
@@ -55,8 +61,12 @@
       display: none;
     }
 
+    .text-xs,
+    .text-sm,
+    .text-base,
     .text-\[10px\],
     .text-\[11px\],
+    .text-\[12px\],
     .text-\[13px\],
     .text-\[14px\],
     .text-\[15px\],
@@ -135,7 +145,7 @@
     .product-tab,
     .collection-tab,
     span.inline-flex.min-h-\[42px\] {
-      font-weight: 600 !important;
+      font-weight: 500 !important;
     }
   </style>
 </head>
@@ -204,13 +214,13 @@
 
         <nav class="hidden items-center gap-8 xl:absolute xl:left-1/2 xl:top-0 xl:z-[1] xl:flex xl:h-full xl:-translate-x-1/2 xl:border-x xl:border-brand-line xl:px-10 xl:gap-10 xl:px-12" aria-label="Main navigation">
           <!-- Temporary hrefs added for convenience while pages are being built. -->
-          <a href="sendlovetocuba.html" class="font-heading text-[17px] uppercase tracking-[0.2px] text-brand-red underline underline-offset-[5px]">Home</a>
-          <a href="shopproducts.html" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Shop</a>
-          <a href="about.html" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
-          <a href="sendlovetocuba.html#how-it-works" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
-          <a href="sendlovetocuba.html#product-collections" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
+          <a href="sendlovetocuba.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-brand-red underline underline-offset-[5px]">Home</a>
+          <a href="shopproducts.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Shop</a>
+          <a href="about.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
+          <a href="howitworks.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
+          <a href="sendlovetocuba.html#product-collections" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
+          <a href="sendlovetocuba.html#why-choose-us" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
+          <a href="sendlovetocuba.html#service-features" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
         </nav>
       </div>
 
@@ -221,13 +231,13 @@
           </button>
           <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
-            <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[11px] font-semibold text-white">0</span>
+            <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[11px] font-medium text-white">0</span>
           </button>
           <button class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-[#091322] text-white">
               <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M3 4h2l2.4 10.5H19L21 8H8"></path></svg>
             </span>
-            <span class="font-body text-[17px] font-semibold text-[#111827]">$0.00</span>
+            <span class="font-body text-[17px] font-medium text-[#111827]">$0.00</span>
           </button>
         </div>
 
@@ -242,7 +252,7 @@
         </button>
         <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
-          <span class="absolute right-0 top-0 grid h-5 min-w-[20px] place-items-center rounded-full bg-brand-red px-1 text-[11px] font-semibold text-white">0</span>
+          <span class="absolute right-0 top-0 grid h-5 min-w-[20px] place-items-center rounded-full bg-brand-red px-1 text-[11px] font-medium text-white">0</span>
         </button>
         <button id="menu-button-mobile" class="grid h-12 w-12 place-items-center rounded-none bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
           <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -263,13 +273,13 @@
 
         <nav class="mt-8 flex flex-col xl:hidden" aria-label="Sidebar navigation">
           <!-- Temporary hrefs added for convenience while pages are being built. -->
-          <a href="sendlovetocuba.html" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-brand-red">Home</a>
-          <a href="shopproducts.html" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">Shop</a>
-          <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
-          <a href="sendlovetocuba.html#how-it-works" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
-          <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="border-b border-brand-line py-3 font-heading text-[17px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
+          <a href="sendlovetocuba.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-brand-red">Home</a>
+          <a href="shopproducts.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Shop</a>
+          <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
+          <a href="howitworks.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
+          <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
+          <a href="sendlovetocuba.html#why-choose-us" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
+          <a href="sendlovetocuba.html#service-features" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
         </nav>
 
         <div class="mt-8">
@@ -316,6 +326,7 @@
       </aside>
     </div>
   </header>
+
 
 
   <main>
@@ -422,7 +433,7 @@
             <span>Shop by Category</span>
             <span class="h-2 w-2 rounded-full bg-[#C6232F]"></span>
           </span>
-          <h3 class="mt-5 font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-semibold uppercase leading-[0.92] text-[#0f1728]">
+          <h3 class="mt-5 font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-medium uppercase leading-[0.92] text-[#0f1728]">
             Find Essential Products For
             <span class="block">Your Loved Ones In Cuba</span>
           </h3>
@@ -434,120 +445,120 @@
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-              <a href="catagories.html?category=Solar%20Products" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
+              <a href="catagories.html?category=Solar%20Products" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/solarproduct.svg" alt="Solar products" class="h-[162px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Solar Products</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Solar Products</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-              <a href="catagories.html?category=Electric%20Scooters" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
+              <a href="catagories.html?category=Electric%20Scooters" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/electricscooter.svg" alt="Electric scooters" class="h-[158px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Electric Scooters</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Electric Scooters</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-[0_20px_40px_rgba(115,135,168,0.26)] sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-              <a href="catagories.html?category=Electric%20Bikes" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
+              <a href="catagories.html?category=Electric%20Bikes" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/electricbike.svg" alt="Electric bikes" class="h-[162px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Electric Bikes</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Electric Bikes</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-              <a href="catagories.html?category=Appliances" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
+              <a href="catagories.html?category=Appliances" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/appliences.svg" alt="Appliances" class="h-[150px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Appliances</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Appliances</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-              <a href="catagories.html?category=Food" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
+              <a href="catagories.html?category=Food" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/food.svg" alt="Food" class="h-[152px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Food</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Food</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <a href="catagories.html?category=Solar%20Kits" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
+                <a href="catagories.html?category=Solar%20Kits" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/solarproduct.svg" alt="Solar kits" class="h-[162px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Solar Kits</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Solar Kits</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <a href="catagories.html?category=City%20Scooters" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
+                <a href="catagories.html?category=City%20Scooters" class="pointer-events-auto rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</a>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/electricscooter.svg" alt="City scooters" class="h-[158px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">City Scooters</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">City Scooters</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
+                <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/electricbike.svg" alt="Power bikes" class="h-[162px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Power Bikes</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Power Bikes</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
+                <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/appliences.svg" alt="Home appliances" class="h-[150px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Home Appliances</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Home Appliances</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
             <article class="category-card group relative h-[305px] basis-full shrink-0 overflow-hidden rounded-[14px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:-translate-y-0.5 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] md:basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] xl:basis-[calc((100%-3rem)/5)]">
               <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
               <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center opacity-0 transition duration-300 group-hover:opacity-100">
-                <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.08rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
+                <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-bold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
               </div>
               <div class="relative flex h-[182px] items-end justify-center">
                 <img src="assets/food.svg" alt="Grocery packs" class="h-[152px] w-auto object-contain transition duration-300" />
               </div>
-              <h4 class="relative mt-3 font-heading text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Grocery Packs</h4>
+              <h4 class="relative mt-3 font-heading font-medium text-[1.12rem] uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Grocery Packs</h4>
               <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">150+ Items</p>
             </article>
 
@@ -574,6 +585,7 @@
       </div>
     </section>
 
+
 <section class="bg-white pb-[72px] pt-[26px] md:pb-[96px] md:pt-[40px]">
       <div class="mx-auto grid max-w-[1540px] grid-cols-1 items-center gap-6 px-10 md:px-16 xl:px-24 lg:grid-cols-[minmax(0,0.84fr)_minmax(0,1fr)] lg:gap-8 xl:gap-10">
         <div class="flex justify-center lg:justify-start">
@@ -590,7 +602,7 @@
             <span class="h-2 w-2 rounded-full bg-[#C6232F]"></span>
           </span>
 
-          <h3 class="mt-5 max-w-[680px] font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-semibold uppercase leading-[0.92] text-[#0f1728]">
+          <h3 class="mt-5 max-w-[680px] font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-medium uppercase leading-[0.92] text-[#0f1728]">
             Connecting Loved Ones
             <span class="block">Through Reliable Delivery</span>
           </h3>
@@ -673,7 +685,7 @@
             <span>Featured Products</span>
             <span class="h-1.5 w-1.5 rounded-full bg-[#C6232F]"></span>
           </span>
-          <h3 class="mt-5 font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-semibold uppercase leading-[0.92] text-[#0f223e]">Popular Products Sent to Cuba</h3>
+          <h3 class="mt-5 font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-medium uppercase leading-[0.92] text-[#0f223e]">Popular Products Sent to Cuba</h3>
         </div>
 
         <div class="mb-8 flex flex-wrap justify-center gap-2.5" role="tablist" aria-label="Product categories">
@@ -1046,6 +1058,7 @@
     </section>
 
 
+
     <section id="why-choose-us" class="bg-white py-[72px] md:py-[108px]">
       <div class="mx-auto max-w-[1540px] px-10 md:px-16 xl:px-24">
         <div class="mx-auto max-w-[780px] text-center">
@@ -1054,7 +1067,7 @@
             <span>Why Choose Us</span>
             <span class="h-2 w-2 rounded-full bg-[#C6232F]"></span>
           </span>
-          <h3 class="mx-auto mt-5 max-w-[680px] font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-semibold uppercase leading-[0.92] text-[#0f223e]">Why Families Choose Send Love To Cuba</h3>
+          <h3 class="mx-auto mt-5 max-w-[680px] font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-medium uppercase leading-[0.92] text-[#0f223e]">Why Families Choose Send Love To Cuba</h3>
         </div>
 
         <div class="mt-14 grid grid-cols-1 items-center gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(380px,540px)_minmax(0,1fr)] xl:gap-3">
@@ -1115,6 +1128,7 @@
       </div>
     </section>
 
+
     <section id="how-it-works" class="bg-white py-[72px] md:py-[108px]">
       <div class="mx-auto max-w-[1540px] px-10 md:px-16 xl:px-24">
         <svg class="absolute h-0 w-0 overflow-hidden" aria-hidden="true" focusable="false">
@@ -1135,7 +1149,7 @@
             <span>How It Works</span>
             <span class="h-2 w-2 rounded-full bg-[#C6232F]"></span>
           </span>
-          <h3 class="mx-auto mt-5 max-w-[920px] font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-semibold uppercase leading-[0.92] text-[#0f223e]">
+          <h3 class="mx-auto mt-5 max-w-[920px] font-heading text-[clamp(1.9rem,3.55vw,3.45rem)] font-medium uppercase leading-[0.92] text-[#0f223e]">
             How Sending Products
             <span class="block">To Cuba Works</span>
           </h3>
@@ -1207,6 +1221,7 @@
 
     
 
+
   <section id="product-collections" class="bg-white pb-[84px] pt-[38px] md:pb-[108px] md:pt-[52px]">
   <div class="mx-auto max-w-[1540px] px-10 md:px-16 xl:px-24">
 
@@ -1215,7 +1230,7 @@
   <div class="flex items-center justify-center gap-16">
     <button
       type="button"
-      class="collection-tab px-6 py-4 font-heading font-semibold text-[1.26rem] uppercase leading-none text-[#111827] transition-all duration-200"
+      class="collection-tab px-6 py-4 font-heading font-medium text-[1.38rem] uppercase leading-none text-[#111827] transition-all duration-200"
       data-tab="best"
     >
       Best Selling
@@ -1223,7 +1238,7 @@
 
     <button
       type="button"
-      class="collection-tab px-6 py-4 font-heading font-semibold text-[1.26rem] uppercase leading-none text-[#111827] transition-all duration-200"
+      class="collection-tab px-6 py-4 font-heading font-medium text-[1.38rem] uppercase leading-none text-[#111827] transition-all duration-200"
       data-tab="new"
     >
       New Arrivals
@@ -1231,7 +1246,7 @@
 
     <button
       type="button"
-      class="collection-tab px-6 py-4 font-heading font-semibold text-[1.26rem] uppercase leading-none text-[#111827] transition-all duration-200"
+      class="collection-tab px-6 py-4 font-heading font-medium text-[1.38rem] uppercase leading-none text-[#111827] transition-all duration-200"
       data-tab="top"
     >
       Top Selling
@@ -2026,6 +2041,7 @@
 
   </div>
 </section>
+
 <section class="bg-[#ededee] py-[84px] md:py-[110px]">
       <div class="mx-auto max-w-[1540px] px-10 md:px-16 xl:px-24">
         <div class="mx-auto max-w-[1040px] text-center">
@@ -2034,7 +2050,7 @@
             <span>How It Works</span>
             <span class="h-2 w-2 rounded-full bg-[#C6232F]"></span>
           </span>
-          <h3 class="mx-auto mt-6 max-w-[920px] font-heading text-[clamp(2.1rem,4.1vw,3.9rem)] font-semibold uppercase leading-[0.92] text-[#101827]">
+          <h3 class="mx-auto mt-6 max-w-[920px] font-heading text-[clamp(2.1rem,4.1vw,3.9rem)] font-medium uppercase leading-[0.92] text-[#101827]">
             Real Stories From Families
             <span class="block">Who Use Our Service</span>
           </h3>
@@ -2046,7 +2062,7 @@
               <img src="https://i.pravatar.cc/80?img=47" alt="Sophia Jane" class="absolute -top-10 left-8 h-20 w-20 rounded-full border-[3px] border-[#f3f3f4] object-cover shadow-[0_9px_20px_rgba(16,24,39,0.16)]" />
               <div class="flex items-center justify-between gap-2">
                 <div>
-                  <h4 class="font-heading font-semibold text-[1.62rem] uppercase leading-none text-[#111827]">Sophia Jane</h4>
+                  <h4 class="font-heading font-medium text-[1.62rem] uppercase leading-none text-[#111827]">Sophia Jane</h4>
                   <p class="mt-1 text-[19px] font-medium leading-none text-[#C6232F]">Customer</p>
                 </div>
                 <p class="text-[22px] leading-none tracking-[2.8px] text-[#f2b21e]">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
@@ -2058,7 +2074,7 @@
               <img src="https://i.pravatar.cc/80?img=12" alt="David Cica" class="absolute -top-10 left-8 h-20 w-20 rounded-full border-[3px] border-[#f8f8f9] object-cover shadow-[0_9px_20px_rgba(16,24,39,0.16)]" />
               <div class="flex items-center justify-between gap-2">
                 <div>
-                  <h4 class="font-heading font-semibold text-[1.62rem] uppercase leading-none text-[#111827]">David Cica</h4>
+                  <h4 class="font-heading font-medium text-[1.62rem] uppercase leading-none text-[#111827]">David Cica</h4>
                   <p class="mt-1 text-[19px] font-medium leading-none text-[#C6232F]">Customer</p>
                 </div>
                 <p class="text-[22px] leading-none tracking-[2.8px] text-[#f2b21e]">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
@@ -2070,7 +2086,7 @@
               <img src="https://i.pravatar.cc/80?img=32" alt="Syra Taluy" class="absolute -top-10 left-8 h-20 w-20 rounded-full border-[3px] border-[#f3f3f4] object-cover shadow-[0_9px_20px_rgba(16,24,39,0.16)]" />
               <div class="flex items-center justify-between gap-2">
                 <div>
-                  <h4 class="font-heading font-semibold text-[1.62rem] uppercase leading-none text-[#111827]">Syra Taluy</h4>
+                  <h4 class="font-heading font-medium text-[1.62rem] uppercase leading-none text-[#111827]">Syra Taluy</h4>
                   <p class="mt-1 text-[19px] font-medium leading-none text-[#C6232F]">Customer</p>
                 </div>
                 <p class="text-[22px] leading-none tracking-[2.8px] text-[#f2b21e]">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
@@ -2082,7 +2098,7 @@
               <img src="https://i.pravatar.cc/80?img=5" alt="Maria Lopez" class="absolute -top-10 left-8 h-20 w-20 rounded-full border-[3px] border-[#f3f3f4] object-cover shadow-[0_9px_20px_rgba(16,24,39,0.16)]" />
               <div class="flex items-center justify-between gap-2">
                 <div>
-                  <h4 class="font-heading font-semibold text-[1.62rem] uppercase leading-none text-[#111827]">Maria Lopez</h4>
+                  <h4 class="font-heading font-medium text-[1.62rem] uppercase leading-none text-[#111827]">Maria Lopez</h4>
                   <p class="mt-1 text-[19px] font-medium leading-none text-[#C6232F]">Customer</p>
                 </div>
                 <p class="text-[22px] leading-none tracking-[2.8px] text-[#f2b21e]">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
@@ -2094,7 +2110,7 @@
               <img src="https://i.pravatar.cc/80?img=15" alt="Carlos Reyes" class="absolute -top-10 left-8 h-20 w-20 rounded-full border-[3px] border-[#f3f3f4] object-cover shadow-[0_9px_20px_rgba(16,24,39,0.16)]" />
               <div class="flex items-center justify-between gap-2">
                 <div>
-                  <h4 class="font-heading font-semibold text-[1.62rem] uppercase leading-none text-[#111827]">Carlos Reyes</h4>
+                  <h4 class="font-heading font-medium text-[1.62rem] uppercase leading-none text-[#111827]">Carlos Reyes</h4>
                   <p class="mt-1 text-[19px] font-medium leading-none text-[#C6232F]">Customer</p>
                 </div>
                 <p class="text-[22px] leading-none tracking-[2.8px] text-[#f2b21e]">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
@@ -2114,6 +2130,7 @@
       </div>
     </section>
 
+
     <section id="service-features" class="border-y border-[#e0e4ea] bg-[#f3f4f6] py-8 md:py-10">
       <div class="mx-auto max-w-[1540px] px-10 md:px-16 xl:px-24">
         <div class="grid grid-cols-1 gap-4 pl-4 pr-2 md:grid-cols-2 md:pl-5 md:pr-3 xl:grid-cols-4">
@@ -2121,7 +2138,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Delivery%20Across%20Cuba.svg" alt="Delivery Across Cuba" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Reliable home delivery to loved ones across the island.</p>
             </div>
           </div>
@@ -2131,7 +2148,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Easy%20Online%20Ordering.svg" alt="Easy Online Ordering" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Shop from the U.S. with a simple &amp; convenient process.</p>
             </div>
           </div>
@@ -2141,7 +2158,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Secure%20Payment.svg" alt="Secure Payment" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Trusted checkout options for a safe shopping experience.</p>
             </div>
           </div>
@@ -2151,7 +2168,7 @@
           <div class="flex items-start gap-4">
             <img src="assets/Essential%20Product%20Selection.svg" alt="Essential Product Selection" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading text-[1.22rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
+              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
               <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Send groceries, household goods, appliances, &amp; more.</p>
             </div>
           </div>
@@ -3131,3 +3148,4 @@
 </script>
 </body>
 </html>
+

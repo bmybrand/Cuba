@@ -8,6 +8,8 @@ $aboutSourceFile = Join-Path $root "about.html"
 $shopSourceFile = Join-Path $root "shopproducts.html"
 $foodSourceFile = Join-Path $root "catagories.html"
 $checkoutSourceFile = Join-Path $root "checkout.html"
+$loginSourceFile = Join-Path $root "login.html"
+$howItWorksSourceFile = Join-Path $root "howitworks.html"
 $partialsDir = Join-Path $root "partials"
 
 if (!(Test-Path $mainFile)) {
@@ -30,14 +32,26 @@ if (!(Test-Path $checkoutSourceFile)) {
   throw "Checkout source file not found: $checkoutSourceFile"
 }
 
+if (!(Test-Path $loginSourceFile)) {
+  throw "Login source file not found: $loginSourceFile"
+}
+
+if (!(Test-Path $howItWorksSourceFile)) {
+  throw "How It Works source file not found: $howItWorksSourceFile"
+}
+
 $requiredPartials = @(
   "header.html",
   "hero.html",
   "about-banner.html",
   "shop-banner.html",
   "food-banner.html",
+  "howitworks-banner.html",
+  "howitworks-content.html",
   "checkout-banner.html",
   "checkout-content.html",
+  "login-banner.html",
+  "login-content.html",
   "food-catalog.html",
   "shop-category-grid.html",
   "shop-featured-products.html",
@@ -64,8 +78,12 @@ $hero = Get-Content (Join-Path $partialsDir "hero.html")
 $aboutBanner = Get-Content (Join-Path $partialsDir "about-banner.html")
 $shopBanner = Get-Content (Join-Path $partialsDir "shop-banner.html")
 $foodBanner = Get-Content (Join-Path $partialsDir "food-banner.html")
+$howItWorksBanner = Get-Content (Join-Path $partialsDir "howitworks-banner.html")
+$howItWorksContent = Get-Content (Join-Path $partialsDir "howitworks-content.html")
 $checkoutBanner = Get-Content (Join-Path $partialsDir "checkout-banner.html")
 $checkoutContent = Get-Content (Join-Path $partialsDir "checkout-content.html")
+$loginBanner = Get-Content (Join-Path $partialsDir "login-banner.html")
+$loginContent = Get-Content (Join-Path $partialsDir "login-content.html")
 $foodCatalog = Get-Content (Join-Path $partialsDir "food-catalog.html")
 $shopCategoryGrid = Get-Content (Join-Path $partialsDir "shop-category-grid.html")
 $shopFeatured = Get-Content (Join-Path $partialsDir "shop-featured-products.html")
@@ -207,7 +225,7 @@ function Build-ShopPage {
   $newBody += "  <main>"
   $newBody += $shopBanner
   $newBody += $shopCategoryGrid
-  $newBody += $shopFeatured
+  $newBody += $featured
   $newBody += $shopCatalog
   $newBody += $service
   $newBody += "  </main>"
@@ -300,4 +318,80 @@ function Build-CheckoutPage {
 
 Build-CheckoutPage -SourceFile $checkoutSourceFile -OutputFile $checkoutSourceFile
 
-Write-Host "Built sendlovetocuba.html, about.html, shopproducts.html, catagories.html, and checkout.html from partials."
+function Build-LoginPage {
+  param(
+    [string]$SourceFile,
+    [string]$OutputFile
+  )
+
+  $lines = Get-Content $SourceFile
+  $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+
+  if (-not $bodyLine -or -not $scriptLine) {
+    throw "Could not find expected body/script boundaries in $SourceFile"
+  }
+
+  $head = $lines[0..($bodyLine - 2)]
+  $behavior = $lines[($scriptLine - 1)..($lines.Length - 1)]
+
+  $newBody = @()
+  $newBody += '<body class="bg-brand-bg font-body leading-[1.45] text-brand-ink">'
+  $newBody += $header
+  $newBody += "  <main>"
+  $newBody += $loginBanner
+  $newBody += $loginContent
+  $newBody += $service
+  $newBody += "  </main>"
+  $newBody += ""
+  $newBody += $footer
+
+  $out = @()
+  $out += $head
+  $out += $newBody
+  $out += $behavior
+
+  Set-Content -Path $OutputFile -Value $out
+}
+
+Build-LoginPage -SourceFile $loginSourceFile -OutputFile $loginSourceFile
+
+function Build-HowItWorksPage {
+  param(
+    [string]$SourceFile,
+    [string]$OutputFile
+  )
+
+  $lines = Get-Content $SourceFile
+  $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+
+  if (-not $bodyLine -or -not $scriptLine) {
+    throw "Could not find expected body/script boundaries in $SourceFile"
+  }
+
+  $head = $lines[0..($bodyLine - 2)]
+  $behavior = $lines[($scriptLine - 1)..($lines.Length - 1)]
+
+  $newBody = @()
+  $newBody += '<body class="bg-brand-bg font-body leading-[1.45] text-brand-ink">'
+  $newBody += $header
+  $newBody += "  <main>"
+  $newBody += $howItWorksBanner
+  $newBody += $howItWorksContent
+  $newBody += $service
+  $newBody += "  </main>"
+  $newBody += ""
+  $newBody += $footer
+
+  $out = @()
+  $out += $head
+  $out += $newBody
+  $out += $behavior
+
+  Set-Content -Path $OutputFile -Value $out
+}
+
+Build-HowItWorksPage -SourceFile $howItWorksSourceFile -OutputFile $howItWorksSourceFile
+
+Write-Host "Built sendlovetocuba.html, about.html, shopproducts.html, catagories.html, checkout.html, login.html, and howitworks.html from partials."
