@@ -92,6 +92,12 @@
       font-weight: 600;
     }
 
+    #service-features p {
+      font-family: "Inter", sans-serif !important;
+      font-size: 0.96rem !important;
+      line-height: 1.28 !important;
+    }
+
     #shop-by-category .category-card h4,
     #product-collections .collection-panel h4 {
       font-size: 1.45rem;
@@ -161,6 +167,22 @@
     .checkout-field:focus {
       border-color: #173a75;
       box-shadow: 0 0 0 3px rgba(23, 58, 117, 0.12);
+    }
+  
+    .product-tab,
+    button.inline-flex,
+    a.inline-flex {
+      font-size: 1.28rem !important;
+      line-height: 1 !important;
+    }
+
+    .product-tab *,
+    button.inline-flex > span,
+    button.inline-flex > div,
+    a.inline-flex > span,
+    a.inline-flex > div {
+      font-size: inherit !important;
+      line-height: 1 !important;
     }
   </style>
 </head>
@@ -234,26 +256,26 @@
           <a href="about.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
           <a href="howitworks.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
           <a href="sendlovetocuba.html#product-collections" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
+          <a href="faq's.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
+          <a href="contact.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
         </nav>
       </div>
 
       <div class="hidden shrink-0 items-stretch lg:flex">
         <div class="flex items-center gap-5 px-8">
-          <button class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
+          <a href="login.html" class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"></circle><path d="M4 20a8 8 0 0 1 16 0"></path></svg>
-          </button>
-          <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
+          </a>
+          <a href="wishlist.html" class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
             <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[11px] font-medium text-white">0</span>
-          </button>
-          <button class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
+          </a>
+          <a href="cart.html" class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-[#091322] text-white">
               <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M3 4h2l2.4 10.5H19L21 8H8"></path></svg>
             </span>
             <span class="font-body text-[17px] font-medium text-[#111827]">$0.00</span>
-          </button>
+          </a>
         </div>
 
         <button id="menu-button" class="grid w-[76px] place-items-center bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
@@ -262,13 +284,13 @@
       </div>
 
       <div class="flex items-center gap-2 px-4 sm:px-6 lg:hidden">
-        <button class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
+        <a href="login.html" class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"></circle><path d="M4 20a8 8 0 0 1 16 0"></path></svg>
-        </button>
-        <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
+        </a>
+        <a href="wishlist.html" class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
           <span class="absolute right-0 top-0 grid h-5 min-w-[20px] place-items-center rounded-full bg-brand-red px-1 text-[11px] font-medium text-white">0</span>
-        </button>
+        </a>
         <button id="menu-button-mobile" class="grid h-12 w-12 place-items-center rounded-none bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
           <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -293,8 +315,8 @@
           <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
           <a href="howitworks.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
           <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
+          <a href="faq's.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
+          <a href="contact.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
         </nav>
 
         <div class="mt-8">
@@ -345,7 +367,7 @@
 
   <main>
     <section class="relative overflow-hidden py-[96px] md:py-[118px]">
-      <img src="assets/shipbg.svg" alt="Checkout banner" class="absolute inset-0 h-full w-full object-cover" />
+      <img src="assets/checkout.svg" alt="Checkout banner" class="absolute inset-0 h-full w-full object-cover" />
       <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,18,34,0.86),rgba(9,18,34,0.76),rgba(9,18,34,0.86))]"></div>
       <div class="relative mx-auto max-w-[1540px] px-10 text-center md:px-16 xl:px-24">
         <h1 class="font-heading text-[clamp(2.5rem,5vw,4.8rem)] uppercase leading-[0.9] text-white">Checkout</h1>
@@ -550,8 +572,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Delivery%20Across%20Cuba.svg" alt="Delivery Across Cuba" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Reliable home delivery to loved ones across the island.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Reliable home delivery to loved ones across the island.</p>
             </div>
           </div>
         </article>
@@ -560,8 +582,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Easy%20Online%20Ordering.svg" alt="Easy Online Ordering" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Shop from the U.S. with a simple &amp; convenient process.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Shop from the U.S. with a simple &amp; convenient process.</p>
             </div>
           </div>
         </article>
@@ -570,8 +592,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Secure%20Payment.svg" alt="Secure Payment" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Trusted checkout options for a safe shopping experience.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Trusted checkout options for a safe shopping experience.</p>
             </div>
           </div>
         </article>
@@ -580,8 +602,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Essential%20Product%20Selection.svg" alt="Essential Product Selection" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Send groceries, household goods, appliances, &amp; more.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Send groceries, household goods, appliances, &amp; more.</p>
             </div>
           </div>
         </article>

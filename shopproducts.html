@@ -92,6 +92,12 @@
       font-weight: 600;
     }
 
+    #service-features p {
+      font-family: "Inter", sans-serif !important;
+      font-size: 0.96rem !important;
+      line-height: 1.28 !important;
+    }
+
     #shop-by-category .category-card h4,
     #product-collections .collection-panel h4 {
       font-size: 1.45rem;
@@ -152,6 +158,22 @@
       font-weight: 500 !important;
     }
 
+  
+    .product-tab,
+    button.inline-flex,
+    a.inline-flex {
+      font-size: 1.28rem !important;
+      line-height: 1 !important;
+    }
+
+    .product-tab *,
+    button.inline-flex > span,
+    button.inline-flex > div,
+    a.inline-flex > span,
+    a.inline-flex > div {
+      font-size: inherit !important;
+      line-height: 1 !important;
+    }
   </style>
 </head>
 <body class="bg-brand-bg font-body leading-[1.45] text-brand-ink">
@@ -224,26 +246,26 @@
           <a href="about.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
           <a href="howitworks.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
           <a href="sendlovetocuba.html#product-collections" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
+          <a href="faq's.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
+          <a href="contact.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
         </nav>
       </div>
 
       <div class="hidden shrink-0 items-stretch lg:flex">
         <div class="flex items-center gap-5 px-8">
-          <button class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
+          <a href="login.html" class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"></circle><path d="M4 20a8 8 0 0 1 16 0"></path></svg>
-          </button>
-          <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
+          </a>
+          <a href="wishlist.html" class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
             <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[11px] font-medium text-white">0</span>
-          </button>
-          <button class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
+          </a>
+          <a href="cart.html" class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-[#091322] text-white">
               <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M3 4h2l2.4 10.5H19L21 8H8"></path></svg>
             </span>
             <span class="font-body text-[17px] font-medium text-[#111827]">$0.00</span>
-          </button>
+          </a>
         </div>
 
         <button id="menu-button" class="grid w-[76px] place-items-center bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
@@ -252,13 +274,13 @@
       </div>
 
       <div class="flex items-center gap-2 px-4 sm:px-6 lg:hidden">
-        <button class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
+        <a href="login.html" class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"></circle><path d="M4 20a8 8 0 0 1 16 0"></path></svg>
-        </button>
-        <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
+        </a>
+        <a href="wishlist.html" class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
           <span class="absolute right-0 top-0 grid h-5 min-w-[20px] place-items-center rounded-full bg-brand-red px-1 text-[11px] font-medium text-white">0</span>
-        </button>
+        </a>
         <button id="menu-button-mobile" class="grid h-12 w-12 place-items-center rounded-none bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
           <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -283,8 +305,8 @@
           <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
           <a href="howitworks.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
           <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
+          <a href="faq's.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
+          <a href="contact.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
         </nav>
 
         <div class="mt-8">
@@ -335,7 +357,7 @@
 
   <main>
     <section class="relative overflow-hidden py-[94px] md:py-[118px]">
-      <img src="assets/shipbg.svg" alt="Port logistics background" class="absolute inset-0 h-full w-full object-cover" />
+      <img src="assets/shopproduct.svg" alt="Shop products background" class="absolute inset-0 h-full w-full object-cover" />
       <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,18,34,0.88),rgba(9,18,34,0.72),rgba(9,18,34,0.88))]"></div>
       <div class="relative mx-auto max-w-[1540px] px-10 text-center md:px-16 xl:px-24">
         <h1 class="font-heading text-[clamp(2.5rem,5vw,4.8rem)] uppercase leading-[0.9] text-white">Shop</h1>
@@ -357,7 +379,7 @@
         </div>
 
         <div class="mt-10 flex flex-wrap justify-center gap-5 xl:gap-7">
-          <article class="category-card group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
+          <article onclick="window.location.href='shop.html'" class="category-card cursor-pointer group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
             <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
             <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-extrabold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
@@ -368,7 +390,7 @@
             <h3 class="relative mt-3 font-heading text-[1.45rem] font-medium uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Solar Products</h3>
             <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">20+ Items</p>
           </article>
-          <article class="category-card group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
+          <article onclick="window.location.href='shop.html'" class="category-card cursor-pointer group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
             <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
             <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-extrabold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
@@ -379,7 +401,7 @@
             <h3 class="relative mt-3 font-heading text-[1.45rem] font-medium uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Electric Scooters</h3>
             <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">18+ Items</p>
           </article>
-          <article class="category-card group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-[0_20px_40px_rgba(115,135,168,0.26)] sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
+          <article onclick="window.location.href='shop.html'" class="category-card cursor-pointer group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-[0_20px_40px_rgba(115,135,168,0.26)] sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
             <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
             <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-extrabold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
@@ -390,7 +412,7 @@
             <h3 class="relative mt-3 font-heading text-[1.45rem] font-medium uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Electric Bikes</h3>
             <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">16+ Items</p>
           </article>
-          <article class="category-card group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
+          <article onclick="window.location.href='shop.html'" class="category-card cursor-pointer group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
             <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
             <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-extrabold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
@@ -401,7 +423,7 @@
             <h3 class="relative mt-3 font-heading text-[1.45rem] font-medium uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Mobility Aids</h3>
             <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">12+ Items</p>
           </article>
-          <article class="category-card group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
+          <article onclick="window.location.href='shop.html'" class="category-card cursor-pointer group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
             <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
             <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-extrabold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
@@ -412,7 +434,7 @@
             <h3 class="relative mt-3 font-heading text-[1.45rem] font-medium uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Food</h3>
             <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">35+ Items</p>
           </article>
-          <article class="category-card group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
+          <article onclick="window.location.href='shop.html'" class="category-card cursor-pointer group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
             <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
             <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-extrabold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
@@ -423,7 +445,7 @@
             <h3 class="relative mt-3 font-heading text-[1.45rem] font-medium uppercase leading-none text-[#121b2d] transition duration-300 group-hover:text-white">Appliances</h3>
             <p class="relative mt-2 text-[13px] text-[#7c8799] transition duration-300 group-hover:text-white/70">24+ Items</p>
           </article>
-          <article class="category-card group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
+          <article onclick="window.location.href='shop.html'" class="category-card cursor-pointer group relative h-[322px] basis-full shrink-0 grow-0 overflow-hidden rounded-[22.56px] bg-[#f7f8fb] px-3 py-4 text-center transition duration-300 hover:shadow-soft sm:basis-[calc((100%-0.75rem)/2)] lg:basis-[calc((100%-2.25rem)/4)] lg:max-w-[288px]">
             <div class="absolute inset-0 bg-[#7387a8] opacity-0 transition duration-300 group-hover:opacity-100"></div>
             <div class="pointer-events-none absolute inset-0 z-10 flex translate-y-4 items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span class="rounded-[12px] bg-white px-7 py-4 font-heading text-[1.16rem] font-extrabold uppercase leading-none tracking-[0.01em] text-[#18305b]">Shop Now</span>
@@ -461,7 +483,7 @@
         </div>
 
         <div id="product-grid" class="grid items-start grid-cols-1 gap-x-5 gap-y-20 sm:grid-cols-2 xl:grid-cols-4">
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="electric bikes">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="electric bikes">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -505,7 +527,7 @@
             </div>
           </article>
 
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="appliances">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="appliances">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -549,7 +571,7 @@
             </div>
           </article>
 
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="solar products">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="solar products">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -593,7 +615,7 @@
             </div>
           </article>
 
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="electric bikes">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="electric bikes">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -637,7 +659,7 @@
             </div>
           </article>
 
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="solar products">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="solar products">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -681,7 +703,7 @@
             </div>
           </article>
 
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="food">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="food">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -725,7 +747,7 @@
             </div>
           </article>
 
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="food">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="food">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -769,7 +791,7 @@
             </div>
           </article>
 
-          <article class="product-card group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="solar products">
+          <article onclick="window.location.href='shop.html'" class="product-card cursor-pointer group relative flex min-h-[322px] flex-col rounded-[20px] bg-[#f7f8fb] p-5 transition-[box-shadow,border-radius] duration-300 hover:z-20 hover:rounded-b-none hover:shadow-soft after:pointer-events-auto after:absolute after:inset-x-0 after:top-full after:z-10 after:h-[60px] after:origin-top after:scale-y-0 after:rounded-b-[20px] after:bg-[#f7f8fb] after:content-[''] after:transition-transform after:duration-300 after:ease-out hover:after:scale-y-100" data-category="solar products">
             <div class="pointer-events-none absolute right-4 top-4 z-20 flex translate-x-2 flex-col gap-2 opacity-0 transition-[transform,opacity] duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
               <button type="button" class="grid h-9 w-9 place-items-center rounded-xl border border-[#d9dde7] bg-white text-[#162541] transition-colors duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
@@ -856,7 +878,7 @@
     <div class="collection-panel grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3" data-panel="new">
 
       <!-- Card 1 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/electric%20scooty.jpeg" alt="Electric bike" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -902,7 +924,7 @@
       </article>
 
       <!-- Card 2 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/electricgenrater.jpeg" alt="Generator" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -945,7 +967,7 @@
       </article>
 
       <!-- Card 3 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/chips.jpeg" alt="Snack packs" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -988,7 +1010,7 @@
       </article>
 
       <!-- Card 4 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/appliences.svg" alt="Generator" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1031,7 +1053,7 @@
       </article>
 
       <!-- Card 5 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/mariabiscits.jpeg" alt="Snack packs" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1074,7 +1096,7 @@
       </article>
 
       <!-- Card 6 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/electricscooter.svg" alt="Electric Bike" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1117,7 +1139,7 @@
       </article>
 
       <!-- Card 7 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/80Wsolarplates.jpeg" alt="Generator" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1160,7 +1182,7 @@
       </article>
 
       <!-- Card 8 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/food.svg" alt="Snack packs" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1203,7 +1225,7 @@
       </article>
 
       <!-- Card 9 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/solarproduct.svg" alt="Generator" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1249,7 +1271,7 @@
     <!-- Panel: Best Selling -->
     <div class="collection-panel hidden grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3" data-panel="best">
       <!-- Card 1 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/electricbike.svg" alt="Electric Bike" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1292,7 +1314,7 @@
       </article>
 
       <!-- Card 2 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/61pp4zaIg5L._AC_SL1500_1-300x237.jpg.jpeg" alt="Generator" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1335,7 +1357,7 @@
       </article>
 
       <!-- Card 3 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/barsoap.jpeg" alt="Snack packs" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1378,7 +1400,7 @@
       </article>
 
       <!-- Card 4 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/SehomyElectricScooter.jpeg" alt="Electric Bike" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1421,7 +1443,7 @@
       </article>
 
       <!-- Card 5 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/solarplates.jpeg" alt="Generator" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1464,7 +1486,7 @@
       </article>
 
       <!-- Card 6 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/flashlight.jpeg" alt="Snack packs" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1510,7 +1532,7 @@
     <!-- Panel: Top Selling -->
     <div class="collection-panel hidden grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3" data-panel="top">
       <!-- Card 1 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/solarlights.jpeg" alt="Generator" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1553,7 +1575,7 @@
       </article>
 
       <!-- Card 2 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/71FU01Jd3uL._SL1500_1-300x234.jpg.jpeg" alt="Snack packs" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1596,7 +1618,7 @@
       </article>
 
       <!-- Card 3 -->
-      <article class="group relative grid min-h-[210px] grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
+      <article onclick="window.location.href='shop.html'" class="group relative grid min-h-[210px] cursor-pointer grid-cols-1 sm:grid-cols-[160px_1fr] items-center gap-6 rounded-[26px] bg-[#f7f7f8] px-4 py-4 sm:py-0">
         <div class="relative flex h-[100px] items-center justify-center sm:h-[140px]">
           <img src="assets/productorder.svg" alt="Electric Bike" class="max-h-[95px] w-auto max-w-full object-contain sm:max-h-[140px]" />
 
@@ -1647,8 +1669,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Delivery%20Across%20Cuba.svg" alt="Delivery Across Cuba" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Reliable home delivery to loved ones across the island.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Reliable home delivery to loved ones across the island.</p>
             </div>
           </div>
         </article>
@@ -1657,8 +1679,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Easy%20Online%20Ordering.svg" alt="Easy Online Ordering" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Shop from the U.S. with a simple &amp; convenient process.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Shop from the U.S. with a simple &amp; convenient process.</p>
             </div>
           </div>
         </article>
@@ -1667,8 +1689,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Secure%20Payment.svg" alt="Secure Payment" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Trusted checkout options for a safe shopping experience.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Trusted checkout options for a safe shopping experience.</p>
             </div>
           </div>
         </article>
@@ -1677,8 +1699,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Essential%20Product%20Selection.svg" alt="Essential Product Selection" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Send groceries, household goods, appliances, &amp; more.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Send groceries, household goods, appliances, &amp; more.</p>
             </div>
           </div>
         </article>

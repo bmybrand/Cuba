@@ -92,6 +92,12 @@
       font-weight: 600;
     }
 
+    #service-features p {
+      font-family: "Inter", sans-serif !important;
+      font-size: 0.96rem !important;
+      line-height: 1.28 !important;
+    }
+
     #shop-by-category .category-card h4,
     #product-collections .collection-panel h4 {
       font-size: 1.45rem;
@@ -173,6 +179,36 @@
       );
     }
 
+    #how-it-works-timeline .hiw-scroll-card {
+      opacity: 0.42;
+      transform: translateY(10px);
+      transition:
+        opacity 220ms ease,
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+    }
+
+    #how-it-works-timeline .hiw-scroll-card.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: #efb4bc;
+      box-shadow: 0 18px 38px rgba(17, 24, 39, 0.08), 0 1px 0 rgba(228, 38, 53, 0.14);
+    }
+
+    #how-it-works-timeline .hiw-scroll-dot {
+      background: #173a75;
+      transition:
+        background-color 220ms ease,
+        transform 220ms ease,
+        box-shadow 220ms ease;
+    }
+
+    #how-it-works-timeline .hiw-scroll-dot.is-active {
+      background: #C6232F;
+      transform: scale(1.06);
+    }
+
     /* Arms live only in the 2rem node column: outer edge → dot center (no overlap into cards). */
     @media (min-width: 1024px) {
       #how-it-works-timeline .hiw-node-cell--arm-left::before {
@@ -180,7 +216,7 @@
         position: absolute;
         left: 0;
         top: 50%;
-        width: 70%;
+        width: calc(50% - 0.5rem);
         height: 2px;
         transform: translateY(-50%);
         background: #e4e7ee;
@@ -193,13 +229,29 @@
         position: absolute;
         right: 0;
         top: 50%;
-        width: 70%;
+        width: calc(50% - 0.5rem);
         height: 2px;
         transform: translateY(-50%);
         background: #e4e7ee;
         z-index: 2;
         pointer-events: none;
       }
+    }
+  
+    .product-tab,
+    button.inline-flex,
+    a.inline-flex {
+      font-size: 1.28rem !important;
+      line-height: 1 !important;
+    }
+
+    .product-tab *,
+    button.inline-flex > span,
+    button.inline-flex > div,
+    a.inline-flex > span,
+    a.inline-flex > div {
+      font-size: inherit !important;
+      line-height: 1 !important;
     }
   </style>
 </head>
@@ -273,26 +325,26 @@
           <a href="about.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
           <a href="howitworks.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
           <a href="sendlovetocuba.html#product-collections" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
+          <a href="faq's.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
+          <a href="contact.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
         </nav>
       </div>
 
       <div class="hidden shrink-0 items-stretch lg:flex">
         <div class="flex items-center gap-5 px-8">
-          <button class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
+          <a href="login.html" class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"></circle><path d="M4 20a8 8 0 0 1 16 0"></path></svg>
-          </button>
-          <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
+          </a>
+          <a href="wishlist.html" class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
             <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
             <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[11px] font-medium text-white">0</span>
-          </button>
-          <button class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
+          </a>
+          <a href="cart.html" class="flex items-center gap-3 rounded-full border border-[#d6dbe4] pl-[6px] pr-5 py-[6px]" aria-label="Cart total">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-[#091322] text-white">
               <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M3 4h2l2.4 10.5H19L21 8H8"></path></svg>
             </span>
             <span class="font-body text-[17px] font-medium text-[#111827]">$0.00</span>
-          </button>
+          </a>
         </div>
 
         <button id="menu-button" class="grid w-[76px] place-items-center bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
@@ -301,13 +353,13 @@
       </div>
 
       <div class="flex items-center gap-2 px-4 sm:px-6 lg:hidden">
-        <button class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
+        <a href="login.html" class="grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Account">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"></circle><path d="M4 20a8 8 0 0 1 16 0"></path></svg>
-        </button>
-        <button class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
+        </a>
+        <a href="wishlist.html" class="relative grid h-10 w-10 place-items-center rounded-full text-[#192f52]" aria-label="Wishlist">
           <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"></path></svg>
           <span class="absolute right-0 top-0 grid h-5 min-w-[20px] place-items-center rounded-full bg-brand-red px-1 text-[11px] font-medium text-white">0</span>
-        </button>
+        </a>
         <button id="menu-button-mobile" class="grid h-12 w-12 place-items-center rounded-none bg-brand-red text-white" aria-expanded="false" aria-controls="mobile-sidebar" aria-label="Menu">
           <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -332,8 +384,8 @@
           <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
           <a href="howitworks.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
           <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
-          <a href="sendlovetocuba.html#why-choose-us" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
-          <a href="sendlovetocuba.html#service-features" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
+          <a href="faq's.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
+          <a href="contact.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
         </nav>
 
         <div class="mt-8">
@@ -384,7 +436,7 @@
 
   <main>
     <section class="relative overflow-hidden py-[96px] md:py-[118px]">
-      <img src="assets/shipbg.svg" alt="How it works banner" class="absolute inset-0 h-full w-full object-cover" />
+      <img src="assets/howitworks.svg" alt="How it works banner" class="absolute inset-0 h-full w-full object-cover" />
       <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,18,34,0.86),rgba(9,18,34,0.76),rgba(9,18,34,0.86))]"></div>
       <div class="relative mx-auto max-w-[1540px] px-10 text-center md:px-16 xl:px-24">
         <h1 class="font-heading text-[clamp(2.6rem,5.3vw,5rem)] uppercase leading-[0.9] text-white">How It Works</h1>
@@ -409,93 +461,96 @@
           <div class="pointer-events-none absolute inset-y-0 left-1/2 z-[1] hidden w-px -translate-x-1/2 hiw-timeline-vline lg:block" aria-hidden="true"></div>
 
           <div class="space-y-12 lg:space-y-14">
-            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_2rem_minmax(0,1fr)] lg:gap-0">
-              <article class="relative z-[2] min-h-[176px] rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-6 py-7 shadow-[0_1px_0_rgba(228,38,53,0.14)] w-full justify-self-start">
-                <div class="flex items-start gap-5">
-                  <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red text-brand-red">
-                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M4 6h16M7 12h10M9 18h6"></path>
-                    </svg>
-                  </span>
-                  <div class="min-w-0 flex-1">
-                    <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Choose Products</h3>
-                    <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Browse a wide selection of essential items including food, appliances, solar kits, and everyday necessities. Carefully choose the products your loved ones need most, all available for reliable delivery across Cuba.</p>
+            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)]">
+              <div class="flex w-full items-center">
+                <article class="hiw-scroll-card relative z-[2] min-h-[168px] w-[90%] justify-self-start rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-5 py-6 shadow-[0_1px_0_rgba(228,38,53,0.14)] md:px-6 md:py-7">
+                  <div class="flex items-start gap-5">
+                    <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red">
+                      <img src="assets/Reliable%20Delivery.svg" alt="Reliable Delivery" class="h-7 w-7 object-contain" />
+                    </span>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Choose Products</h3>
+                      <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Browse a wide selection of essential items including food, appliances, solar kits, and everyday necessities. Carefully choose the products your loved ones need most, all available for reliable delivery across Cuba.</p>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+                <span class="hidden h-px flex-1 bg-[#e5e7eb] lg:mr-[-1.5rem] lg:block xl:mr-[-2rem]"></span>
+              </div>
 
-              <div class="hiw-node-cell hiw-node-cell--arm-left relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
-                <span class="relative z-[5] h-4 w-4 shrink-0 rounded-full bg-brand-red ring-4 ring-white"></span>
+              <div class="relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
+                <span class="hiw-scroll-dot relative z-[5] h-6 w-6 shrink-0 rounded-full bg-[#173a75] ring-2 ring-[#e5e7eb]"></span>
               </div>
 
               <div></div>
             </div>
 
-            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_2rem_minmax(0,1fr)] lg:gap-0">
+            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)]">
               <div></div>
 
-              <div class="hiw-node-cell hiw-node-cell--arm-right relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
-                <span class="relative z-[5] h-4 w-4 shrink-0 rounded-full bg-[#173a75] ring-4 ring-white"></span>
+              <div class="relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
+                <span class="hiw-scroll-dot relative z-[5] h-6 w-6 shrink-0 rounded-full bg-[#173a75] ring-2 ring-[#e5e7eb]"></span>
               </div>
 
-              <article class="relative z-[2] min-h-[176px] rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-6 py-7 shadow-[0_1px_0_rgba(228,38,53,0.14)] w-full justify-self-end">
-                <div class="flex items-start gap-5">
-                  <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red text-brand-red">
-                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M6 7h12M6 12h9M6 17h7"></path>
-                    </svg>
-                  </span>
-                  <div class="min-w-0 flex-1">
-                    <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Add To Cart &amp; Checkout</h3>
-                    <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Select your desired items and proceed to a secure checkout process. Review your order, apply any discounts if available, and complete your purchase with trusted safe payment options.</p>
+              <div class="flex w-full items-center justify-end">
+                <span class="hidden h-px flex-1 bg-[#e5e7eb] lg:ml-[-1.5rem] lg:block xl:ml-[-2rem]"></span>
+                <article class="hiw-scroll-card relative z-[2] min-h-[168px] w-[90%] justify-self-end rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-5 py-6 shadow-[0_1px_0_rgba(228,38,53,0.14)] md:px-6 md:py-7 lg:ml-auto">
+                  <div class="flex items-start gap-5">
+                    <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red">
+                      <img src="assets/Reliable%20Delivery.svg" alt="Reliable Delivery" class="h-7 w-7 object-contain" />
+                    </span>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Add To Cart &amp; Checkout</h3>
+                      <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Select your desired items and proceed to a secure checkout process. Review your order, apply any discounts if available, and complete your purchase with trusted safe payment options.</p>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </div>
             </div>
 
-            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_2rem_minmax(0,1fr)] lg:gap-0">
-              <article class="relative z-[2] min-h-[176px] rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-6 py-7 shadow-[0_1px_0_rgba(228,38,53,0.14)] w-full justify-self-start">
-                <div class="flex items-start gap-5">
-                  <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red text-brand-red">
-                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M7 4h10v16H7z"></path>
-                      <path d="M10 8h4M10 12h4"></path>
-                    </svg>
-                  </span>
-                  <div class="min-w-0 flex-1">
-                    <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Provide Recipient Details</h3>
-                    <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Enter accurate delivery information for your loved one in Cuba, including address and contact details. This ensures a smooth and hassle-free delivery experience without delays.</p>
+            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)]">
+              <div class="flex w-full items-center">
+                <article class="hiw-scroll-card relative z-[2] min-h-[168px] w-[90%] justify-self-start rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-5 py-6 shadow-[0_1px_0_rgba(228,38,53,0.14)] md:px-6 md:py-7">
+                  <div class="flex items-start gap-5">
+                    <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red">
+                      <img src="assets/Reliable%20Delivery.svg" alt="Reliable Delivery" class="h-7 w-7 object-contain" />
+                    </span>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Provide Recipient Details</h3>
+                      <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Enter accurate delivery information for your loved one in Cuba, including address and contact details. This ensures a smooth and hassle-free delivery experience without delays.</p>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+                <span class="hidden h-px flex-1 bg-[#e5e7eb] lg:mr-[-1.5rem] lg:block xl:mr-[-2rem]"></span>
+              </div>
 
-              <div class="hiw-node-cell hiw-node-cell--arm-left relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
-                <span class="relative z-[5] h-4 w-4 shrink-0 rounded-full bg-[#173a75] ring-4 ring-white"></span>
+              <div class="relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
+                <span class="hiw-scroll-dot relative z-[5] h-6 w-6 shrink-0 rounded-full bg-[#173a75] ring-2 ring-[#e5e7eb]"></span>
               </div>
 
               <div></div>
             </div>
 
-            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_2rem_minmax(0,1fr)] lg:gap-0">
+            <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)]">
               <div></div>
 
-              <div class="hiw-node-cell hiw-node-cell--arm-right relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
-                <span class="relative z-[5] h-4 w-4 shrink-0 rounded-full bg-[#173a75] ring-4 ring-white"></span>
+              <div class="relative z-[5] hidden min-h-[4rem] w-full items-center justify-center lg:flex">
+                <span class="hiw-scroll-dot relative z-[5] h-6 w-6 shrink-0 rounded-full bg-[#173a75] ring-2 ring-[#e5e7eb]"></span>
               </div>
 
-              <article class="relative z-[2] min-h-[176px] rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-6 py-7 shadow-[0_1px_0_rgba(228,38,53,0.14)] w-full justify-self-end">
-                <div class="flex items-start gap-5">
-                  <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red text-brand-red">
-                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 7h18M6 12h12M8 17h8"></path>
-                    </svg>
-                  </span>
-                  <div class="min-w-0 flex-1">
-                    <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Delivery &amp; Tracking</h3>
-                    <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Browse a wide selection of essential items including food, appliances, solar kits, and everyday necessities. Carefully choose the products your loved ones need most, all available for reliable delivery across Cuba.</p>
+              <div class="flex w-full items-center justify-end">
+                <span class="hidden h-px flex-1 bg-[#e5e7eb] lg:ml-[-1.5rem] lg:block xl:ml-[-2rem]"></span>
+                <article class="hiw-scroll-card relative z-[2] min-h-[168px] w-[90%] justify-self-end rounded-[24px] border border-[#f4edef] border-b-[#efb4bc] bg-[#f7f7f8] px-5 py-6 shadow-[0_1px_0_rgba(228,38,53,0.14)] md:px-6 md:py-7 lg:ml-auto">
+                  <div class="flex items-start gap-5">
+                    <span class="grid h-[60px] w-[60px] shrink-0 place-items-center rounded-full border border-dashed border-brand-red">
+                      <img src="assets/Reliable%20Delivery.svg" alt="Reliable Delivery" class="h-7 w-7 object-contain" />
+                    </span>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-heading text-[1.45rem] uppercase leading-[0.96] text-[#101827]">Delivery &amp; Tracking</h3>
+                      <p class="mt-2 max-w-none text-[15px] leading-[1.55] text-[#6d7380]">Browse a wide selection of essential items including food, appliances, solar kits, and everyday necessities. Carefully choose the products your loved ones need most, all available for reliable delivery across Cuba.</p>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </div>
             </div>
           </div>
         </div>
@@ -508,8 +563,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Delivery%20Across%20Cuba.svg" alt="Delivery Across Cuba" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Reliable home delivery to loved ones across the island.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Delivery Across Cuba</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Reliable home delivery to loved ones across the island.</p>
             </div>
           </div>
         </article>
@@ -518,8 +573,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Easy%20Online%20Ordering.svg" alt="Easy Online Ordering" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Shop from the U.S. with a simple &amp; convenient process.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Easy Online Ordering</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Shop from the U.S. with a simple &amp; convenient process.</p>
             </div>
           </div>
         </article>
@@ -528,8 +583,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Secure%20Payment.svg" alt="Secure Payment" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Trusted checkout options for a safe shopping experience.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Secure Payment</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Trusted checkout options for a safe shopping experience.</p>
             </div>
           </div>
         </article>
@@ -538,8 +593,8 @@
           <div class="flex items-start gap-4">
             <img src="assets/Essential%20Product%20Selection.svg" alt="Essential Product Selection" class="h-8 w-8 shrink-0 object-contain" />
             <div>
-              <h5 class="font-heading font-semibold text-[1.22rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
-              <p class="mt-2 text-[15px] leading-[1.45] text-[#6d7380]">Send groceries, household goods, appliances, &amp; more.</p>
+              <h5 class="font-heading font-semibold text-[1.3rem] uppercase leading-none text-[#101827]">Essential Product Selection</h5>
+              <p class="mt-2 text-[#6d7380]" style="font-family: Inter, sans-serif; font-size: 0.96rem; line-height: 1.28;">Send groceries, household goods, appliances, &amp; more.</p>
             </div>
           </div>
         </article>
@@ -1551,6 +1606,56 @@
     setActiveDot(0);
     updateHighlightAndDots();
     scheduleAutoAdvance();
+  }
+
+  {
+    const timeline = document.querySelector("#how-it-works-timeline");
+    const timelineCards = timeline ? Array.from(timeline.querySelectorAll(".hiw-scroll-card")) : [];
+    const timelineDots = timeline ? Array.from(timeline.querySelectorAll(".hiw-scroll-dot")) : [];
+
+    if (timelineCards.length) {
+      let timelineRafId = null;
+
+      const updateTimelineCards = () => {
+        const viewportCenter = window.innerHeight * 0.5;
+        let activeCard = timelineCards[0];
+        let nearest = Number.POSITIVE_INFINITY;
+
+        timelineCards.forEach((card) => {
+          const rect = card.getBoundingClientRect();
+          const cardCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(cardCenter - viewportCenter);
+
+          if (distance < nearest) {
+            nearest = distance;
+            activeCard = card;
+          }
+        });
+
+        timelineCards.forEach((card) => {
+          card.classList.toggle("is-active", card === activeCard);
+        });
+
+        timelineDots.forEach((dot, index) => {
+          dot.classList.toggle("is-active", timelineCards[index] === activeCard);
+        });
+      };
+
+      const queueTimelineCardsUpdate = () => {
+        if (timelineRafId !== null) {
+          return;
+        }
+
+        timelineRafId = window.requestAnimationFrame(() => {
+          timelineRafId = null;
+          updateTimelineCards();
+        });
+      };
+
+      window.addEventListener("scroll", queueTimelineCardsUpdate, { passive: true });
+      window.addEventListener("resize", queueTimelineCardsUpdate);
+      updateTimelineCards();
+    }
   }
 </script>
 </body>
