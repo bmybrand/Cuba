@@ -1828,46 +1828,69 @@
     const sidebarClose = document.getElementById("sidebar-close");
     const sidebarLinks = sidebar ? Array.from(sidebar.querySelectorAll("a")) : [];
     const openButtons = [menuButton, mobileMenuButton].filter(Boolean);
+    let sidebarIsOpen = false;
+    let sidebarHideTimer;
     let previousBodyOverflow = "";
     let previousBodyPaddingRight = "";
 
-    function getScrollbarWidth() {
-      return window.innerWidth - document.documentElement.clientWidth;
+    function syncSidebarTriggerState(isOpen) {
+      openButtons.forEach((button) => button.setAttribute("aria-expanded", isOpen ? "true" : "false"));
+      sidebar?.setAttribute("aria-hidden", isOpen ? "false" : "true");
     }
 
     function openSidebar(trigger) {
-      if (!sidebar || !sidebarPanel || !sidebarBackdrop) return;
+      if (!sidebar || !sidebarPanel || !sidebarBackdrop || sidebarIsOpen) return;
+
+      sidebarIsOpen = true;
+      window.clearTimeout(sidebarHideTimer);
+
+      sidebar.classList.remove("hidden");
+      sidebar.classList.remove("pointer-events-none");
+
+      requestAnimationFrame(() => {
+        sidebarBackdrop.classList.remove("opacity-0");
+        sidebarPanel.classList.remove("translate-x-full");
+      });
+
       previousBodyOverflow = document.body.style.overflow;
       previousBodyPaddingRight = document.body.style.paddingRight;
-      document.body.style.overflow = "hidden";
-      const scrollbarWidth = getScrollbarWidth();
+
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       if (scrollbarWidth > 0) {
         const computedPaddingRight = Number.parseFloat(window.getComputedStyle(document.body).paddingRight) || 0;
         document.body.style.paddingRight = `${computedPaddingRight + scrollbarWidth}px`;
       }
-      sidebar.classList.remove("hidden");
-      requestAnimationFrame(() => {
-        sidebar.classList.remove("pointer-events-none");
-        sidebarBackdrop.classList.remove("opacity-0");
-        sidebarPanel.classList.remove("translate-x-full");
-        openButtons.forEach((button) => button.setAttribute("aria-expanded", "true"));
-        if (trigger) {
-          sidebar.dataset.triggerId = trigger.id || "";
-        }
-      });
+
+      document.body.style.overflow = "hidden";
+      syncSidebarTriggerState(true);
+
+      if (trigger) {
+        sidebar.dataset.triggerId = trigger.id || "";
+      }
+
+      if (sidebarClose) {
+        sidebarClose.focus();
+      }
     }
 
     function closeSidebar() {
-      if (!sidebar || !sidebarPanel || !sidebarBackdrop) return;
+      if (!sidebar || !sidebarPanel || !sidebarBackdrop || !sidebarIsOpen) return;
+
+      sidebarIsOpen = false;
       sidebar.classList.add("pointer-events-none");
       sidebarBackdrop.classList.add("opacity-0");
       sidebarPanel.classList.add("translate-x-full");
-      openButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
-      window.setTimeout(() => {
-        sidebar.classList.add("hidden");
-        document.body.style.overflow = previousBodyOverflow;
-        document.body.style.paddingRight = previousBodyPaddingRight;
+      syncSidebarTriggerState(false);
+
+      window.clearTimeout(sidebarHideTimer);
+      sidebarHideTimer = window.setTimeout(() => {
+        if (!sidebarIsOpen) {
+          sidebar.classList.add("hidden");
+        }
       }, 300);
+
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.paddingRight = previousBodyPaddingRight;
     }
 
     openButtons.forEach((button) => {

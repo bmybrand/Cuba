@@ -598,22 +598,69 @@
         const sidebarOpenButtons = [document.getElementById("menu-button"), document.getElementById("menu-button-mobile")].filter(Boolean);
 
         if (mobileSidebar && mobileSidebarBackdrop && mobileSidebarPanel && sidebarOpenButtons.length) {
+            let sidebarIsOpen = false;
+            let sidebarHideTimer;
+            let previousBodyOverflow = "";
+            let previousBodyPaddingRight = "";
+
+            const syncSidebarTriggerState = (isOpen) => {
+                sidebarOpenButtons.forEach((button) => {
+                    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                });
+
+                mobileSidebar.setAttribute("aria-hidden", isOpen ? "false" : "true");
+            };
+
             const openSidebar = () => {
+                if (sidebarIsOpen) return;
+
+                sidebarIsOpen = true;
+                window.clearTimeout(sidebarHideTimer);
+
                 mobileSidebar.classList.remove("hidden");
                 mobileSidebar.classList.remove("pointer-events-none");
+
                 requestAnimationFrame(() => {
                     mobileSidebarBackdrop.classList.remove("opacity-0");
                     mobileSidebarPanel.classList.remove("translate-x-full");
                 });
+
+                previousBodyOverflow = document.body.style.overflow;
+                previousBodyPaddingRight = document.body.style.paddingRight;
+
+                const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                if (scrollbarWidth > 0) {
+                    const computedPaddingRight = Number.parseFloat(window.getComputedStyle(document.body).paddingRight) || 0;
+                    document.body.style.paddingRight = `${computedPaddingRight + scrollbarWidth}px`;
+                }
+
+                document.body.style.overflow = "hidden";
+                syncSidebarTriggerState(true);
+
+                if (sidebarCloseButton) {
+                    sidebarCloseButton.focus();
+                }
             };
 
             const closeSidebar = () => {
+                if (!sidebarIsOpen) return;
+
+                sidebarIsOpen = false;
+
                 mobileSidebarBackdrop.classList.add("opacity-0");
                 mobileSidebarPanel.classList.add("translate-x-full");
-                setTimeout(() => {
-                    mobileSidebar.classList.add("hidden");
-                    mobileSidebar.classList.add("pointer-events-none");
+                syncSidebarTriggerState(false);
+
+                window.clearTimeout(sidebarHideTimer);
+                sidebarHideTimer = window.setTimeout(() => {
+                    if (!sidebarIsOpen) {
+                        mobileSidebar.classList.add("hidden");
+                        mobileSidebar.classList.add("pointer-events-none");
+                    }
                 }, 300);
+
+                document.body.style.overflow = previousBodyOverflow;
+                document.body.style.paddingRight = previousBodyPaddingRight;
             };
 
             sidebarOpenButtons.forEach((button) => button.addEventListener("click", openSidebar));
