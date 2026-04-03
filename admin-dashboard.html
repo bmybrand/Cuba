@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Send Love to Cuba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: "#f3f4f6",
+              ink: "#101a2a",
+              navy: "#0b1f42",
+              red: "#C6232F",
+              line: "#e9edf2",
+            },
+          },
+          fontFamily: {
+            body: ["Barlow", "sans-serif"],
+            heading: ["Bebas Neue", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 12px 30px rgba(5, 21, 45, 0.08)",
+            insetlogo: "inset 0 3px 8px rgba(0, 0, 0, 0.16)",
+          },
+          borderRadius: {
+            soft: "14px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      font-family: "Barlow", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #0f172a;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-50">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="hidden w-72 flex-shrink-0 flex-col border-r border-white/10 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900/90 px-6 py-6 lg:flex">
+      <div class="flex items-center gap-3">
+        <div class="grid h-11 w-11 place-items-center rounded-2xl bg-[#C6232F] shadow-soft">
+          <span class="text-[22px] font-semibold leading-none text-white">SL</span>
+        </div>
+        <div>
+          <p class="font-heading text-[24px] leading-none tracking-[0.16em] text-white">
+            Admin
+          </p>
+          <p class="mt-1 text-[12px] uppercase tracking-[0.18em] text-slate-400">
+            Send Love to Cuba
+          </p>
+        </div>
+      </div>
+
+      <nav class="mt-8 space-y-1 text-[14px] font-medium">
+        <p class="px-2 text-[11px] uppercase tracking-[0.16em] text-slate-500">
+          Overview
+        </p>
+        <a
+          href="#"
+          class="group mt-1 flex items-center gap-3 rounded-xl bg-slate-900/80 px-3.5 py-2.5 text-[14px] text-white shadow-[0_10px_28px_rgba(0,0,0,0.55)] ring-1 ring-white/10"
+        >
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-[#C6232F]/90 text-white">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-5H10v5H5a1 1 0 0 1-1-1z"></path>
+            </svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+
+        <p class="mt-6 px-2 text-[11px] uppercase tracking-[0.16em] text-slate-500">
+          Manage
+        </p>
+        <a href="#" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-slate-300 hover:bg-slate-900/60 hover:text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-slate-900/80 text-slate-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 6h16v4H4zM4 14h10v4H4z"></path>
+            </svg>
+          </span>
+          <span>Orders</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-slate-300 hover:bg-slate-900/60 hover:text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-slate-900/80 text-slate-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="8" r="3.2"></circle>
+              <path d="M5 20a7 7 0 0 1 14 0"></path>
+            </svg>
+          </span>
+          <span>Customers</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-slate-300 hover:bg-slate-900/60 hover:text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-slate-900/80 text-slate-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="4" y="4" width="7" height="7" rx="1.4"></rect>
+              <rect x="13" y="4" width="7" height="7" rx="1.4"></rect>
+              <rect x="4" y="13" width="7" height="7" rx="1.4"></rect>
+              <rect x="13" y="13" width="7" height="7" rx="1.4"></rect>
+            </svg>
+          </span>
+          <span>Catalog</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-slate-300 hover:bg-slate-900/60 hover:text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-slate-900/80 text-slate-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 7h16M4 12h10M4 17h7"></path>
+            </svg>
+          </span>
+          <span>Content</span>
+        </a>
+
+        <p class="mt-6 px-2 text-[11px] uppercase tracking-[0.16em] text-slate-500">
+          System
+        </p>
+        <a href="#" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-slate-300 hover:bg-slate-900/60 hover:text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-slate-900/80 text-slate-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="3.2"></circle>
+              <path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1a1.8 1.8 0 0 1-1.3 3.1l-1.1-.2a2 2 0 0 0-1.9.6l-.8.9a1.8 1.8 0 0 1-2.6 0l-.8-.9a2 2 0 0 0-1.9-.6l-1.1.2A1.8 1.8 0 0 1 4 17.1l.1-.1a1.8 1.8 0 0 0 .4-2 2 2 0 0 0-.5-2.1l-.7-.7a1.8 1.8 0 0 1 1.3-3.1l1.1.2a2 2 0 0 0 1.9-.6l.8-.9a1.8 1.8 0 0 1 2.6 0l.8.9a2 2 0 0 0 1.9.6l1.1-.2A1.8 1.8 0 0 1 20 8.1v.1l-.7.7a2 2 0 0 0-.5 2.1 2 2 0 0 0 .6 2.1Z"></path>
+            </svg>
+          </span>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="mt-auto space-y-4 pt-6">
+        <div class="rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3">
+          <p class="text-[12px] font-medium uppercase tracking-[0.16em] text-slate-400">
+            Environment
+          </p>
+          <p class="mt-1 text-[13px] font-semibold text-white">Staging / Static Preview</p>
+          <p class="mt-2 text-[12px] text-slate-400">
+            Data shown here is example-only for admin layout testing.
+          </p>
+        </div>
+        <a
+          href="sendlovetocuba.html"
+          class="flex items-center justify-center gap-2 rounded-xl border border-slate-600/70 bg-slate-900/70 px-3.5 py-2.5 text-[13px] font-medium text-slate-100 hover:border-slate-400 hover:bg-slate-900"
+        >
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+          <span>Back to storefront</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex min-w-0 flex-1 flex-col">
+      <!-- Top bar -->
+      <header class="flex items-center justify-between gap-4 border-b border-white/10 bg-slate-950/80 px-4 py-3.5 backdrop-blur-sm sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3">
+          <button
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-200 lg:hidden"
+            aria-label="Open navigation (static demo button)"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+          <div>
+            <p class="font-heading text-[22px] uppercase leading-none tracking-[0.18em] text-white">
+              Dashboard
+            </p>
+            <p class="mt-1 text-[12px] text-slate-400">
+              Static admin overview for managing Send Love to Cuba.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="hidden items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3.5 py-1.5 text-[12px] font-medium text-slate-200 hover:border-slate-500 hover:bg-slate-900 sm:inline-flex"
+          >
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            <span>All systems operational</span>
+          </button>
+          <button
+            class="relative grid h-10 w-10 place-items-center rounded-full border border-slate-700 bg-slate-900 text-slate-200"
+            aria-label="Notifications (static)"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 16v-5a6 6 0 1 0-12 0v5"></path>
+              <path d="M5 16h14l-1.5 2.5a1 1 0 0 1-.86.5H7.36a1 1 0 0 1-.86-.5z"></path>
+              <path d="M10 20a2 2 0 0 0 4 0"></path>
+            </svg>
+            <span class="absolute right-1 top-1 h-2.5 w-2.5 rounded-full bg-[#C6232F] ring-2 ring-slate-950"></span>
+          </button>
+          <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-2 py-1.5">
+            <div class="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-tr from-[#C6232F] to-rose-500 text-[14px] font-semibold">
+              SA
+            </div>
+            <div class="hidden pr-1 text-[12px] sm:block">
+              <p class="font-medium text-slate-100">Saad Admin</p>
+              <p class="text-slate-400">Owner</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard content -->
+      <main class="hide-scrollbar flex-1 overflow-y-auto bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 px-4 pb-8 pt-5 sm:px-6 lg:px-8">
+        <!-- KPI cards -->
+        <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="relative overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-slate-900 to-slate-900/60 p-4 shadow-[0_22px_60px_rgba(0,0,0,0.55)]">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                  Today&apos;s Revenue
+                </p>
+                <p class="mt-2 text-[24px] font-semibold text-white">
+                  $4,820.40
+                </p>
+                <p class="mt-2 inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-400">
+                  <span class="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  <span>+18.3% vs yesterday</span>
+                </p>
+              </div>
+              <div class="grid h-10 w-10 place-items-center rounded-full bg-emerald-500/10 text-emerald-400">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 12.5 10.5 7 16 12.5"></path>
+                  <path d="M10.5 7v10.5"></path>
+                </svg>
+              </div>
+            </div>
+            <p class="mt-3 text-[12px] text-slate-400">
+              Includes all paid orders in USD for the last 24 hours.
+            </p>
+          </article>
+
+          <article class="relative overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-slate-900 to-slate-900/60 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                  Open Orders
+                </p>
+                <p class="mt-2 text-[24px] font-semibold text-white">
+                  128
+                </p>
+                <p class="mt-2 text-[12px] text-slate-400">
+                  32 awaiting packing • 18 in transit • 5 at risk
+                </p>
+              </div>
+              <div class="grid h-10 w-10 place-items-center rounded-full bg-sky-500/10 text-sky-400">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  <path d="M3 9h18"></path>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="relative overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-slate-900 to-slate-900/60 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                  Active Customers
+                </p>
+                <p class="mt-2 text-[24px] font-semibold text-white">
+                  1,248
+                </p>
+                <p class="mt-2 text-[12px] text-slate-400">
+                  86 new signups in the last 7 days.
+                </p>
+              </div>
+              <div class="grid h-10 w-10 place-items-center rounded-full bg-amber-500/10 text-amber-400">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="8" cy="8" r="3"></circle>
+                  <circle cx="17" cy="9" r="3"></circle>
+                  <path d="M3 20a5 5 0 0 1 10 0"></path>
+                  <path d="M14 20a4 4 0 0 1 7 0"></path>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="relative overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-slate-900 to-slate-900/60 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                  Support Queue
+                </p>
+                <p class="mt-2 text-[24px] font-semibold text-white">
+                  9
+                </p>
+                <p class="mt-2 text-[12px] text-slate-400">
+                  4 urgent delivery questions · 5 general.
+                </p>
+              </div>
+              <div class="grid h-10 w-10 place-items-center rounded-full bg-rose-500/10 text-rose-400">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 5h16v11H6l-2 3z"></path>
+                </svg>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Main grid -->
+        <section class="mt-6 grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1.7fr)_minmax(0,1.1fr)]">
+          <!-- Orders & activity -->
+          <div class="space-y-5">
+            <!-- Recent orders -->
+            <article class="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 shadow-[0_18px_55px_rgba(0,0,0,0.6)]">
+              <header class="flex items-center justify-between border-b border-white/5 px-4 py-3.5 sm:px-5">
+                <div>
+                  <p class="text-[13px] font-semibold text-slate-50">
+                    Recent Orders
+                  </p>
+                  <p class="mt-1 text-[12px] text-slate-400">
+                    Static sample data representing latest activity.
+                  </p>
+                </div>
+                <button class="hidden rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-[12px] font-medium text-slate-200 hover:border-slate-500 hover:bg-slate-900 sm:inline-flex">
+                  View all
+                </button>
+              </header>
+
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-slate-800/80 text-[13px]">
+                  <thead class="bg-slate-900/60 text-slate-400">
+                    <tr>
+                      <th class="px-4 py-2 text-left font-medium sm:px-5">Order</th>
+                      <th class="px-3 py-2 text-left font-medium">Customer</th>
+                      <th class="hidden px-3 py-2 text-left font-medium md:table-cell">
+                        Destination
+                      </th>
+                      <th class="px-3 py-2 text-left font-medium">Status</th>
+                      <th class="px-4 py-2 text-right font-medium sm:px-5">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-800/70 bg-slate-950/40">
+                    <tr class="hover:bg-slate-900/60">
+                      <td class="whitespace-nowrap px-4 py-3 font-mono text-[12px] text-slate-200 sm:px-5">
+                        #CUB-1048
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-3 text-slate-100">
+                        Maria Lopez
+                      </td>
+                      <td class="hidden px-3 py-3 text-slate-300 md:table-cell">
+                        Havana, Cuba
+                      </td>
+                      <td class="px-3 py-3">
+                        <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-400">
+                          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                          Delivered
+                        </span>
+                      </td>
+                      <td class="whitespace-nowrap px-4 py-3 text-right text-slate-100 sm:px-5">
+                        $128.40
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/60">
+                      <td class="whitespace-nowrap px-4 py-3 font-mono text-[12px] text-slate-200 sm:px-5">
+                        #CUB-1047
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-3 text-slate-100">
+                        Daniel Perez
+                      </td>
+                      <td class="hidden px-3 py-3 text-slate-300 md:table-cell">
+                        Santiago de Cuba
+                      </td>
+                      <td class="px-3 py-3">
+                        <span class="inline-flex items-center gap-1 rounded-full bg-sky-500/10 px-2 py-0.5 text-[11px] font-medium text-sky-400">
+                          <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                          In transit
+                        </span>
+                      </td>
+                      <td class="whitespace-nowrap px-4 py-3 text-right text-slate-100 sm:px-5">
+                        $212.90
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/60">
+                      <td class="whitespace-nowrap px-4 py-3 font-mono text-[12px] text-slate-200 sm:px-5">
+                        #CUB-1046
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-3 text-slate-100">
+                        Ana Rodriguez
+                      </td>
+                      <td class="hidden px-3 py-3 text-slate-300 md:table-cell">
+                        Matanzas, Cuba
+                      </td>
+                      <td class="px-3 py-3">
+                        <span class="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[11px] font-medium text-amber-400">
+                          <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+                          Awaiting pickup
+                        </span>
+                      </td>
+                      <td class="whitespace-nowrap px-4 py-3 text-right text-slate-100 sm:px-5">
+                        $96.10
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/60">
+                      <td class="whitespace-nowrap px-4 py-3 font-mono text-[12px] text-slate-200 sm:px-5">
+                        #CUB-1045
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-3 text-slate-100">
+                        Carlos Reyes
+                      </td>
+                      <td class="hidden px-3 py-3 text-slate-300 md:table-cell">
+                        Holguín, Cuba
+                      </td>
+                      <td class="px-3 py-3">
+                        <span class="inline-flex items-center gap-1 rounded-full bg-rose-500/10 px-2 py-0.5 text-[11px] font-medium text-rose-400">
+                          <span class="h-1.5 w-1.5 rounded-full bg-rose-400"></span>
+                          Action required
+                        </span>
+                      </td>
+                      <td class="whitespace-nowrap px-4 py-3 text-right text-slate-100 sm:px-5">
+                        $184.75
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/60">
+                      <td class="whitespace-nowrap px-4 py-3 font-mono text-[12px] text-slate-200 sm:px-5">
+                        #CUB-1044
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-3 text-slate-100">
+                        Lucia Gomez
+                      </td>
+                      <td class="hidden px-3 py-3 text-slate-300 md:table-cell">
+                        Camagüey, Cuba
+                      </td>
+                      <td class="px-3 py-3">
+                        <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-400">
+                          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                          Delivered
+                        </span>
+                      </td>
+                      <td class="whitespace-nowrap px-4 py-3 text-right text-slate-100 sm:px-5">
+                        $72.30
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <!-- Operational timeline -->
+            <article class="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80">
+              <header class="flex items-center justify-between border-b border-white/5 px-4 py-3.5 sm:px-5">
+                <div>
+                  <p class="text-[13px] font-semibold text-slate-50">
+                    Operational Timeline
+                  </p>
+                  <p class="mt-1 text-[12px] text-slate-400">
+                    Snapshot of today&apos;s fulfillment flow (static).
+                  </p>
+                </div>
+              </header>
+
+              <div class="grid gap-4 px-4 py-4 sm:grid-cols-3 sm:px-5">
+                <div class="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-3.5">
+                  <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                    Orders received
+                  </p>
+                  <p class="mt-2 text-[22px] font-semibold text-white">64</p>
+                  <p class="mt-1 text-[12px] text-slate-400">
+                    Between 09:00–14:00 EST.
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-3.5">
+                  <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                    Packed &amp; labeled
+                  </p>
+                  <p class="mt-2 text-[22px] font-semibold text-white">48</p>
+                  <p class="mt-1 text-[12px] text-slate-400">
+                    Ready for export logistics.
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-3.5">
+                  <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                    Delivered today
+                  </p>
+                  <p class="mt-2 text-[22px] font-semibold text-white">31</p>
+                  <p class="mt-1 text-[12px] text-slate-400">
+                    Across 12 Cuban provinces.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right column: top products & support -->
+          <div class="space-y-5">
+            <!-- Top products -->
+            <article class="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80">
+              <header class="flex items-center justify-between border-b border-white/5 px-4 py-3.5 sm:px-5">
+                <div>
+                  <p class="text-[13px] font-semibold text-slate-50">
+                    Top Performing Product Groups
+                  </p>
+                  <p class="mt-1 text-[12px] text-slate-400">
+                    Based on last 7 days of sample data.
+                  </p>
+                </div>
+              </header>
+
+              <div class="space-y-3 px-4 py-4 sm:px-5">
+                <div class="flex items-center gap-3 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-3.5 py-3">
+                  <div class="grid h-9 w-9 place-items-center rounded-full bg-slate-900 text-slate-200">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M4 10h16v8H4z"></path>
+                      <path d="M6 10V6h4v4M14 10V4h4v6"></path>
+                    </svg>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <p class="truncate text-[13px] font-semibold text-slate-50">
+                      Essential Food &amp; Grocery Boxes
+                    </p>
+                    <p class="mt-0.5 text-[12px] text-slate-400">
+                      342 orders • 34% of total revenue
+                    </p>
+                    <div class="mt-2 h-1.5 w-full rounded-full bg-slate-800">
+                      <div class="h-1.5 w-[74%] rounded-full bg-emerald-500"></div>
+                    </div>
+                  </div>
+                  <p class="text-[12px] font-semibold text-slate-100">
+                    $18.2k
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-3 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-3.5 py-3">
+                  <div class="grid h-9 w-9 place-items-center rounded-full bg-slate-900 text-slate-200">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <rect x="5" y="3" width="14" height="18" rx="2"></rect>
+                      <path d="M9 7h6M9 11h6M9 15h3"></path>
+                    </svg>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <p class="truncate text-[13px] font-semibold text-slate-50">
+                      Household &amp; Cleaning Essentials
+                    </p>
+                    <p class="mt-0.5 text-[12px] text-slate-400">
+                      218 orders • 21% of total revenue
+                    </p>
+                    <div class="mt-2 h-1.5 w-full rounded-full bg-slate-800">
+                      <div class="h-1.5 w-[56%] rounded-full bg-sky-500"></div>
+                    </div>
+                  </div>
+                  <p class="text-[12px] font-semibold text-slate-100">
+                    $11.3k
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-3 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-3.5 py-3">
+                  <div class="grid h-9 w-9 place-items-center rounded-full bg-slate-900 text-slate-200">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M4 9h16l-1.5 8.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5z"></path>
+                      <path d="M9 9V5.5A2.5 2.5 0 0 1 11.5 3h1A2.5 2.5 0 0 1 15 5.5V9"></path>
+                    </svg>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <p class="truncate text-[13px] font-semibold text-slate-50">
+                      Baby Care &amp; Personal Care
+                    </p>
+                    <p class="mt-0.5 text-[12px] text-slate-400">
+                      154 orders • 12% of total revenue
+                    </p>
+                    <div class="mt-2 h-1.5 w-full rounded-full bg-slate-800">
+                      <div class="h-1.5 w-[38%] rounded-full bg-amber-400"></div>
+                    </div>
+                  </div>
+                  <p class="text-[12px] font-semibold text-slate-100">
+                    $6.9k
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Support + quick actions -->
+            <article class="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-950 to-slate-900">
+              <div class="grid gap-4 px-4 py-4 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] sm:px-5">
+                <div class="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-3.5">
+                  <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                    Admin Notes
+                  </p>
+                  <p class="mt-2 text-[13px] font-semibold text-slate-50">
+                    Today&apos;s focus
+                  </p>
+                  <ul class="mt-2 space-y-1.5 text-[12px] text-slate-300">
+                    <li class="flex items-start gap-2">
+                      <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                      <span>Verify high-value Havana shipments before export.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="mt-1 h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                      <span>Review new &quot;solar &amp; energy&quot; bundle pricing.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="mt-1 h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+                      <span>Update FAQ content for tracking notifications.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-3.5">
+                  <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                    Quick Actions
+                  </p>
+                  <div class="mt-2 space-y-2.5 text-[12px]">
+                    <button class="flex w-full items-center justify-between rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-left text-slate-100 hover:border-slate-500 hover:bg-slate-900">
+                      <span>Mark Havana route as &quot;on time&quot;</span>
+                      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                    </button>
+                    <button class="flex w-full items-center justify-between rounded-xl border border-slate-800 bg-slate-950/80 px-3 py-2 text-left text-slate-200 hover:border-slate-600 hover:bg-slate-900">
+                      <span>Export today&apos;s order summary (CSV)</span>
+                      <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M8 17h8M12 3v11m0 0 4-4m-4 4-4-4"></path>
+                      </svg>
+                    </button>
+                    <button class="flex w-full items-center justify-between rounded-xl border border-slate-800 bg-slate-950/80 px-3 py-2 text-left text-slate-200 hover:border-slate-600 hover:bg-slate-900">
+                      <span>Open content editor (About / FAQ)</span>
+                      <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 20h4l9.5-9.5a1.5 1.5 0 0 0-2.1-2.1L6 17.9 4 20z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
+
