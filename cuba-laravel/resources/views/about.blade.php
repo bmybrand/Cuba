@@ -344,7 +344,7 @@
             </div>
           </div>
         </section>
-    <section id="how-it-works" class="bg-white py-[72px] md:py-[108px]">
+    <section id="how-it-works" class="bg-white pt-[72px] pb-[140px] md:pt-[108px] md:pb-[190px]">
           <div class="mx-auto max-w-[1540px] px-10 md:px-16 xl:px-24">
             <svg class="absolute h-0 w-0 overflow-hidden" aria-hidden="true" focusable="false">
               <symbol id="product-order-icon" viewBox="0 0 41 41">
