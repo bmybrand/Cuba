@@ -254,7 +254,6 @@
           <a href="shopproducts.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Shop</a>
           <a href="about.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
           <a href="howitworks.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
-          <a href="sendlovetocuba.html#product-collections" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery &amp; Tracking</a>
           <a href="faq's.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
           <a href="contact.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Contact</a>
         </nav>
@@ -313,7 +312,6 @@
           <a href="shopproducts.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Shop</a>
           <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
           <a href="howitworks.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
-          <a href="sendlovetocuba.html#product-collections" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Delivery &amp; Tracking</a>
           <a href="faq's.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
           <a href="contact.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Contact</a>
         </nav>
@@ -377,6 +375,7 @@
         if (currentPath === "faq's.html") return "faq's.html";
         if (currentPath === "about.html") return "about.html";
         if (currentPath === "howitworks.html") return "howitworks.html";
+        if (["login.html", "wishlist.html", "cart.html"].includes(currentPath)) return "__icon-only__";
         if (["shop.html", "shopproducts.html", "catagories.html", "cart.html", "checkout.html"].includes(currentPath)) return "shop";
         if (currentPath === "sendlovetocuba.html" && currentHash === "#product-collections") return "#product-collections";
         if (currentPath === "sendlovetocuba.html" && currentHash === "#how-it-works") return "howitworks.html";
@@ -417,6 +416,41 @@
           link.removeAttribute("aria-current");
         }
       });
+
+      const setCircleIconActiveState = (selector, isActive) => {
+        document.querySelectorAll(selector).forEach((link) => {
+          link.classList.toggle("border", isActive);
+          link.classList.toggle("border-brand-red", isActive);
+          link.classList.toggle("bg-[#fff1f3]", isActive);
+          link.classList.toggle("text-brand-red", isActive);
+          link.classList.toggle("text-[#192f52]", !isActive);
+        });
+      };
+
+      const setCartActiveState = (isActive) => {
+        document.querySelectorAll('a[href="cart.html"][aria-label="Cart total"]').forEach((link) => {
+          const cartIcon = link.querySelector("span");
+          const cartTotal = link.querySelector("span.font-body");
+
+          link.classList.toggle("border-brand-red", isActive);
+          link.classList.toggle("bg-[#fff1f3]", isActive);
+          link.classList.toggle("border-[#d6dbe4]", !isActive);
+
+          if (cartIcon) {
+            cartIcon.classList.toggle("bg-brand-red", isActive);
+            cartIcon.classList.toggle("bg-[#091322]", !isActive);
+          }
+
+          if (cartTotal) {
+            cartTotal.classList.toggle("text-brand-red", isActive);
+            cartTotal.classList.toggle("text-[#111827]", !isActive);
+          }
+        });
+      };
+
+      setCircleIconActiveState('a[href="login.html"][aria-label="Account"]', currentPath === "login.html");
+      setCircleIconActiveState('a[href="wishlist.html"][aria-label="Wishlist"]', currentPath === "wishlist.html");
+      setCartActiveState(currentPath === "cart.html");
     })();
   </script>
 

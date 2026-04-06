@@ -258,9 +258,6 @@
                     <a href="{{ url('/how-it-works') }}"
                         class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How
                         It Works</a>
-                    <a href="{{ url('/') }}#product-collections"
-                        class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Delivery
-                        &amp; Tracking</a>
                     <a href="{{ url('/faq') }}"
                         class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">FAQs</a>
                     <a href="{{ url('/contact') }}"
@@ -369,9 +366,6 @@
                     <a href="{{ url('/how-it-works') }}"
                         class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How
                         It Works</a>
-                    <a href="{{ url('/') }}#product-collections"
-                        class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Delivery
-                        &amp; Tracking</a>
                     <a href="{{ url('/faq') }}"
                         class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">FAQs</a>
                     <a href="{{ url('/contact') }}"
