@@ -7,8 +7,10 @@
     <title>Product Details | Send Love to Cuba</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="assets/fonts/JTUSjIg69CK48gW7PXooxW4.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="assets/fonts/bebas-barlow-local.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -235,47 +237,6 @@
 </head>
 
 <body class="product-shell font-body leading-[1.45] text-brand-ink">
-    <style>
-        html.fonts-pending header nav a.font-heading,
-        html.fonts-pending #mobile-sidebar nav a.font-heading {
-            opacity: 0;
-        }
-
-        html.fonts-ready header nav a.font-heading,
-        html.fonts-ready #mobile-sidebar nav a.font-heading {
-            opacity: 1;
-        }
-    </style>
-    <script>
-        (function () {
-            const root = document.documentElement;
-
-            if (sessionStorage.getItem("sltc-fonts-ready") === "1") {
-                root.classList.add("fonts-ready");
-                return;
-            }
-
-            root.classList.add("fonts-pending");
-
-            const markReady = () => {
-                root.classList.remove("fonts-pending");
-                root.classList.add("fonts-ready");
-                sessionStorage.setItem("sltc-fonts-ready", "1");
-            };
-
-            if (document.fonts && document.fonts.check('1em "Bebas Neue"')) {
-                markReady();
-                return;
-            }
-
-            if (document.fonts && document.fonts.ready) {
-                document.fonts.ready.then(markReady);
-                return;
-            }
-
-            window.addEventListener("load", markReady, { once: true });
-        })();
-    </script>
     <div class="hidden border-b border-white/10 bg-[#183a70] text-white lg:block">
         <div class="mx-auto flex min-h-10 max-w-[1770px] items-center justify-between gap-6 px-5 xl:px-8">
             <div class="flex min-w-0 items-center gap-5 overflow-hidden text-[14px] text-white/95">
