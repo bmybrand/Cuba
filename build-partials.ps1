@@ -44,6 +44,7 @@ $requiredPartials = @(
   "header.html",
   "hero.html",
   "about-banner.html",
+  "about-cta.html",
   "shop-banner.html",
   "food-banner.html",
   "howitworks-banner.html",
@@ -76,6 +77,7 @@ foreach ($partial in $requiredPartials) {
 $header = Get-Content (Join-Path $partialsDir "header.html")
 $hero = Get-Content (Join-Path $partialsDir "hero.html")
 $aboutBanner = Get-Content (Join-Path $partialsDir "about-banner.html")
+$aboutCta = Get-Content (Join-Path $partialsDir "about-cta.html")
 $shopBanner = Get-Content (Join-Path $partialsDir "shop-banner.html")
 $foodBanner = Get-Content (Join-Path $partialsDir "food-banner.html")
 $howItWorksBanner = Get-Content (Join-Path $partialsDir "howitworks-banner.html")
@@ -116,8 +118,6 @@ function Get-MarkedSection {
 }
 
 $about = Get-MarkedSection -SourceFile $aboutSourceFile -StartMarker '<!-- ABOUT_SECTION_START -->' -EndMarker '<!-- ABOUT_SECTION_END -->'
-$aboutContent = Get-MarkedSection -SourceFile $aboutSourceFile -StartMarker '<!-- ABOUT_SECTION_START -->' -EndMarker '</main>'
-
 function Build-Page {
   param(
     [string]$SourceFile,
@@ -127,7 +127,7 @@ function Build-Page {
   $lines = Get-Content $SourceFile
 
   $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
-  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -Last 1).LineNumber
 
   if (-not $bodyLine -or -not $scriptLine) {
     throw "Could not find expected body/script boundaries in $SourceFile"
@@ -173,7 +173,7 @@ function Build-AboutPage {
   $lines = Get-Content $SourceFile
 
   $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
-  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -Last 1).LineNumber
 
   if (-not $bodyLine -or -not $scriptLine) {
     throw "Could not find expected body/script boundaries in $SourceFile"
@@ -188,9 +188,16 @@ function Build-AboutPage {
   $newBody += "  <main>"
   $newBody += $aboutBanner
   $newBody += "<!-- ABOUT_SECTION_START -->"
-  $newBody += $aboutContent
+  $newBody += $about
   $newBody += "<!-- ABOUT_SECTION_END -->"
+  $newBody += $why
+  $newBody += $aboutCta
+  $newBody += $how
+  $newBody += $testimonials
+  $newBody += $service
   $newBody += "  </main>"
+  $newBody += ""
+  $newBody += $footer
 
   $out = @()
   $out += $head
@@ -210,7 +217,7 @@ function Build-ShopPage {
 
   $lines = Get-Content $SourceFile
   $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
-  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -Last 1).LineNumber
 
   if (-not $bodyLine -or -not $scriptLine) {
     throw "Could not find expected body/script boundaries in $SourceFile"
@@ -250,7 +257,7 @@ function Build-FoodPage {
 
   $lines = Get-Content $SourceFile
   $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
-  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -Last 1).LineNumber
 
   if (-not $bodyLine -or -not $scriptLine) {
     throw "Could not find expected body/script boundaries in $SourceFile"
@@ -288,7 +295,7 @@ function Build-CheckoutPage {
 
   $lines = Get-Content $SourceFile
   $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
-  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -Last 1).LineNumber
 
   if (-not $bodyLine -or -not $scriptLine) {
     throw "Could not find expected body/script boundaries in $SourceFile"
@@ -326,7 +333,7 @@ function Build-LoginPage {
 
   $lines = Get-Content $SourceFile
   $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
-  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -Last 1).LineNumber
 
   if (-not $bodyLine -or -not $scriptLine) {
     throw "Could not find expected body/script boundaries in $SourceFile"
@@ -364,7 +371,7 @@ function Build-HowItWorksPage {
 
   $lines = Get-Content $SourceFile
   $bodyLine = (Select-String -Path $SourceFile -Pattern '^<body ' | Select-Object -First 1).LineNumber
-  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -First 1).LineNumber
+  $scriptLine = (Select-String -Path $SourceFile -Pattern '^\s*<script>\s*$' | Where-Object { $_.LineNumber -gt $bodyLine } | Select-Object -Last 1).LineNumber
 
   if (-not $bodyLine -or -not $scriptLine) {
     throw "Could not find expected body/script boundaries in $SourceFile"

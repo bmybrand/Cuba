@@ -286,6 +286,47 @@
   </style>
 </head>
 <body class="bg-brand-bg font-body leading-[1.45] text-brand-ink">
+  <style>
+    html.fonts-pending header nav a.font-heading,
+    html.fonts-pending #mobile-sidebar nav a.font-heading {
+      opacity: 0;
+    }
+
+    html.fonts-ready header nav a.font-heading,
+    html.fonts-ready #mobile-sidebar nav a.font-heading {
+      opacity: 1;
+    }
+  </style>
+  <script>
+    (function () {
+      const root = document.documentElement;
+
+      if (sessionStorage.getItem("sltc-fonts-ready") === "1") {
+        root.classList.add("fonts-ready");
+        return;
+      }
+
+      root.classList.add("fonts-pending");
+
+      const markReady = () => {
+        root.classList.remove("fonts-pending");
+        root.classList.add("fonts-ready");
+        sessionStorage.setItem("sltc-fonts-ready", "1");
+      };
+
+      if (document.fonts && document.fonts.check('1em "Bebas Neue"')) {
+        markReady();
+        return;
+      }
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(markReady);
+        return;
+      }
+
+      window.addEventListener("load", markReady, { once: true });
+    })();
+  </script>
   <div class="hidden border-b border-white/10 bg-[#183a70] text-white lg:block">
     <div class="mx-auto flex min-h-10 max-w-[1770px] items-center justify-between gap-6 px-5 xl:px-8">
       <div class="flex min-w-0 items-center gap-5 overflow-hidden text-[14px] text-white/95">
@@ -350,7 +391,7 @@
 
         <nav class="hidden items-center gap-8 xl:absolute xl:left-1/2 xl:top-0 xl:z-[1] xl:flex xl:h-full xl:-translate-x-1/2 xl:border-x xl:border-brand-line xl:px-10 xl:gap-10 xl:px-12" aria-label="Main navigation">
           <!-- Temporary hrefs added for convenience while pages are being built. -->
-          <a href="sendlovetocuba.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-brand-red underline underline-offset-[5px]">Home</a>
+          <a href="sendlovetocuba.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Home</a>
           <a href="shopproducts.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">Shop</a>
           <a href="about.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">About</a>
           <a href="howitworks.html" class="font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f] hover:text-brand-red">How It Works</a>
@@ -409,7 +450,7 @@
 
         <nav class="mt-8 flex flex-col xl:hidden" aria-label="Sidebar navigation">
           <!-- Temporary hrefs added for convenience while pages are being built. -->
-          <a href="sendlovetocuba.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-brand-red">Home</a>
+          <a href="sendlovetocuba.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Home</a>
           <a href="shopproducts.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">Shop</a>
           <a href="about.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">About</a>
           <a href="howitworks.html" class="border-b border-brand-line py-3 font-heading text-[19px] uppercase tracking-[0.2px] text-[#13253f]">How It Works</a>
@@ -462,6 +503,63 @@
       </aside>
     </div>
   </header>
+  <script>
+    (function () {
+      const navLinks = document.querySelectorAll("header nav a.font-heading, #mobile-sidebar nav a.font-heading");
+      if (!navLinks.length) {
+        return;
+      }
+
+      const currentPath = (window.location.pathname.split("/").pop() || "sendlovetocuba.html").toLowerCase();
+      const currentHash = window.location.hash.toLowerCase();
+
+      const activeSection = (() => {
+        if (currentPath === "contact.html") return "contact.html";
+        if (currentPath === "faq's.html") return "faq's.html";
+        if (currentPath === "about.html") return "about.html";
+        if (currentPath === "howitworks.html") return "howitworks.html";
+        if (["shop.html", "shopproducts.html", "catagories.html", "cart.html", "checkout.html"].includes(currentPath)) return "shop";
+        if (currentPath === "sendlovetocuba.html" && currentHash === "#product-collections") return "#product-collections";
+        if (currentPath === "sendlovetocuba.html" && currentHash === "#how-it-works") return "howitworks.html";
+        return "sendlovetocuba.html";
+      })();
+
+      const isActiveLink = (href) => {
+        const normalizedHref = (href || "").toLowerCase();
+
+        if (activeSection === "shop") {
+          return normalizedHref === "shop.html" || normalizedHref === "shopproducts.html";
+        }
+
+        if (activeSection === "howitworks.html") {
+          return normalizedHref === "howitworks.html" || normalizedHref.endsWith("#how-it-works");
+        }
+
+        if (activeSection === "#product-collections") {
+          return normalizedHref.endsWith("#product-collections");
+        }
+
+        return normalizedHref === activeSection;
+      };
+
+      navLinks.forEach((link) => {
+        const active = isActiveLink(link.getAttribute("href"));
+        const isMobileLink = link.closest("#mobile-sidebar");
+
+        link.classList.toggle("text-brand-red", active);
+        link.classList.toggle("text-[#13253f]", !active);
+        link.classList.toggle("hover:text-brand-red", !active && !isMobileLink);
+        link.classList.toggle("underline", active && !isMobileLink);
+        link.classList.toggle("underline-offset-[5px]", active && !isMobileLink);
+
+        if (active) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    })();
+  </script>
 
 
   <main>
