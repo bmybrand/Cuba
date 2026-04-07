@@ -243,7 +243,7 @@
         <div class="relative flex min-h-[74px] w-full items-stretch justify-between">
             <div class="flex min-w-0 items-center">
                 <div class="flex min-w-0 items-center px-4 py-3 sm:px-6 lg:w-[520px] lg:px-8">
-                    <img src="{{ asset('assets/logo.svg') }}" alt="Send Love to Cuba"
+                    <img decoding="sync" fetchpriority="high" style="image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;backface-visibility:hidden;" src="{{ asset('assets/logo.png') }}" alt="Send Love to Cuba"
                         class="h-[52px] w-auto shrink-0 sm:h-[58px] lg:h-[64px]" />
                 </div>
 
@@ -353,7 +353,7 @@
                     </button>
                 </div>
 
-                <img src="{{ asset('assets/logo.svg') }}" alt="Send Love to Cuba"
+                <img decoding="sync" fetchpriority="high" style="image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;backface-visibility:hidden;" src="{{ asset('assets/logo.png') }}" alt="Send Love to Cuba"
                     class="h-auto w-[290px] max-w-full" />
 
                 <nav class="mt-8 flex flex-col xl:hidden" aria-label="Sidebar navigation">
