@@ -492,7 +492,7 @@
                         <li><a href="#"
                                 class="text-[16px] leading-none text-[#8d99ae] no-underline transition-colors hover:text-white">Order
                                 History</a></li>
-                        <li><a href="#"
+                        <li><a href="{{ url('/wishlist') }}"
                                 class="text-[16px] leading-none text-[#8d99ae] no-underline transition-colors hover:text-white">My
                                 Wishlist</a></li>
                         <li><a href="#"
